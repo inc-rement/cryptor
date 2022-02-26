@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
   FILE *S1, *S2;
   char output[1024], y[1024];
-  char key[10];
+  char key[8];
   char g1[20];
   char g2[20];
   sprintf(g1, "%s", argv[1]);
