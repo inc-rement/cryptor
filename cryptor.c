@@ -1,18 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
-//#include <assert.c>
-int main(int argc, char *argv[])
-{
-  char output[1024], y[1024];
-  char key[8];
-  printf ("input key:");
-  scanf("%s", &key);
-  printf("input phrase:");
-  scanf("%s", &y);
+#include <string.h>
 
-for (int i = 0; i<10;i++) 
-	 output[i]=y[i]^key[i%(sizeof(key)/sizeof(char))];
+void encryptDecrypt(char *input, char *output) {
+	char key[] = {'K', 'E', 'Y'}; //Can be any chars, and any size array
+	
+	int i;
+	for(i = 0; i < strlen(input); i++) {
+		output[i] = input[i] ^ key[i % (sizeof(key)/sizeof(char))];
+	}
+}
 
-  printf("%s\n",output);	  
-  return 0;
+int main (int argc, char *argv[]) {
+	char baseStr[10];
+	printf("input phrase:");
+	scanf("%s", &baseStr);
+
+	char encrypted[strlen(baseStr)];
+	encryptDecrypt(baseStr, encrypted);
+	printf("Encrypted:%s\n", encrypted);
+	
+	char decrypted[strlen(baseStr)];
+	encryptDecrypt(encrypted, decrypted);
+	printf("Decrypted:%s\n", decrypted);
 }
