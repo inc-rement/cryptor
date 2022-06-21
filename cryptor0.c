@@ -1,7 +1,15 @@
 #include <stdio.h>
 #include <string.h>
+void encrypt(char *input, char *output) {
+         char key[] = {'K','E','Y'}; //Can be any chars, and any size array
+ 
+         int i;
+         for(i = 0; i < strlen(input); i++) {
+                 output[i] = input[i] ^ key[i % (sizeof(key)/sizeof(char))];
+         }
+ }
 
-void encryptDecrypt(char *input, char *output) {
+void decrypt(char *input, char *output) {
 	char key[] = {'K','E','Y'}; //Can be any chars, and any size array
 	
 	int i;
@@ -16,10 +24,10 @@ int main (int argc, char *argv[]) {
 	scanf("%s", &baseStr);
 
 	char encrypted[strlen(baseStr)];
-	encryptDecrypt(baseStr, encrypted);
+	encrypt(baseStr, encrypted);
 	printf("Encrypted:%s\n", encrypted);
 	
 	char decrypted[strlen(baseStr)];
-	encryptDecrypt(encrypted, decrypted);
+	decrypt(encrypted, decrypted);
 	printf("Decrypted:%s\n", decrypted);
 }
