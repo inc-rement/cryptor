@@ -8,7 +8,7 @@
 //https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjqx7T_ub74AhU6S_EDHUjFCjkQFnoECAYQAQ&url=http%3A%2F%2Fwww.michurin.net%2Fcomputer-science%2Frsa.html&usg=AOvVaw36Nqk-XBBToKxm-iPEyQK5
 
 //https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjmhtLjtb74AhW6Q_EDHXwMDToQFnoECCIQAQ&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Frsa-algorithm-cryptography%2F&usg=AOvVaw3J67iRlmWB13mqPNSNXNoa
-
+//https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiJjK_Do7_4AhXSRvEDHb_KAuoQFnoECAQQAQ&url=http%3A%2F%2Fwww.dut.edu.ua%2Fuploads%2Fl_1102_64436031.pdf&usg=AOvVaw3ufvihNfSBdOMfJgk7_2Ox
 
 
   
@@ -73,4 +73,3 @@ int main()
   
     return 0;
 }
-// This code is contributed by Akash Sharan.
