@@ -1,4 +1,4 @@
-
+//naibolsiy obshiy delitel
 int gcd(int a, int h)
 {
     int temp;
@@ -14,20 +14,21 @@ int gcd(int a, int h)
 
 
 int main(){
-int p=3,q=7;
-int n=p*q;
-int phi=(p-1)*(q-1);
+int p=3,q=7;//prostie chisla
+int n=p*q;//module
+int phi=(p-1)*(q-1);//func Eilera
 
-int e=2;
+int e=2;//min prostoe
 while(e<phi){
-
+//nahojdeniye e
 if (gcd(e, phi)==1)
             break;
         else
             e++;
 
 }
-int d = (1 + (2*phi))/e;
+int k=2;//mnogitel
+int d = (1 + (k*phi))/e;
 
 int msg=12;
 
