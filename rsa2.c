@@ -1,3 +1,7 @@
+#include<stdio.h>
+#include<math.h>
+
+
 //naibolsiy obshiy delitel
 int gcd(int a, int h)
 {
