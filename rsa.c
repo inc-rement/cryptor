@@ -54,7 +54,7 @@ int main()
     double d = (1 + (k*phi))/e;
   
     // Message to be encrypted
-    double msg = 12;
+    double msg = 13;
   
     printf("Message data = %lf", msg);
   

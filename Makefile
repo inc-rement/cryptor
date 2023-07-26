@@ -1,3 +1,3 @@
 all:
-	gcc cryptor.c -o cryptor
-	gcc -o rsa rsa2.c -lm
+	#gcc cryptor.c -o cryptor
+	g++ -o rsa rsa.cpp;./rsa
