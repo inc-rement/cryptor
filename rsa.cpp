@@ -1,6 +1,6 @@
-#include<stdio.h>
+//#include<stdio.h>
 //#include<math.h>
-//#include <cfenv>
+#include <cfenv>
 #include <cmath>
 #include <iostream>
 
@@ -37,26 +37,24 @@ if (gcd(e, phi)==1)
 int k=2;//mnogitel
 int d = (1 + (k*phi))/e;
 
-int msg=11;
-
+int msg;
+std::cout<<"input number: "<<std::endl;
 std::cin>>msg;
 
 
-printf("msg:%i\n",msg);
+std::cout<<"msg: "<<msg<<std::endl;
 
-int c = pow(msg, e);
-    c = fmod(c, n);
-
-
-printf("encrypted:%i\n",c);
+int c=(int)(pow(msg, e))%n;
 
 
-
-int m = pow(c, d);
-    m = fmod(m, n);
+std::cout<<"encrypted: "<<c<<std::endl;
 
 
-printf("decrypted:%i\n",m);
+
+int m = (int)(pow(c, d))%n;
+
+
+std::cout<<"decrypted: "<<m<<std::endl;
 
 return 0;
 
