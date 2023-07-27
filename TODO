@@ -7,6 +7,24 @@ V	big files support
 	recursive gcd
 	exp  crypt
 
+n = pq
+
+Then the center computes
+
+O(n) = O(pq) = (p-1)(q-1)
+
+Finally the center computes two integers d and e with
+
+e*d mod O(n) = 1
+
+
+
+
+
+
+
+
+
 
 	http:///e-nigma.ru/stat/rsa
 	http://www.e-nigma.ru/stat/gost/
