@@ -27,7 +27,7 @@ int phi=(p-1)*(q-1);//func Eilera
 
 int e=2;//min prostoe
 while(e<phi){
-//nahojdeniye e
+//nahojdeniye e открытой экспоненты
 if (gcd(e, phi)==1)
             break;
         else
@@ -35,7 +35,7 @@ if (gcd(e, phi)==1)
 
 }
 int k=2;//mnogitel
-int d = (1 + (k*phi))/e;
+int d = (1 + (k*phi))/e; вычислить секретную экспоненту
 
 int msg;
 std::cout<<"input number: "<<std::endl;
