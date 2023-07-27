@@ -35,7 +35,7 @@ if (gcd(e, phi)==1)
 
 }
 int k=2;//mnogitel
-int d = (1 + (k*phi))/e; вычислить секретную экспоненту
+int d = (1 + (k*phi))/e; //вычислить секретную экспоненту
 
 int msg;
 std::cout<<"input number: "<<std::endl;
