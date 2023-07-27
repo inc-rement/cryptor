@@ -105,7 +105,9 @@ int main()
 {
 	primefiller();
 	setkeys();
-	string message = "Test Message+";
+	string message;//"Test Message+";
+	std::cout<<"input string: "<<std::endl;
+	std::cin>>message;
 	// uncomment below for manual input
 	// cout<<"enter the message\n";getline(cin,message);
 	// calling the encoding function
