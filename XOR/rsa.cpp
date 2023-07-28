@@ -21,7 +21,7 @@ int gcd(long int a, long int h)
 
 
 int main(){
-int p=3,q=11;//prostie chisla
+int p=3,q=7;//prostie chisla
 int n=p*q;//module
 std::cout <<"n "<< n << std::endl;
 int phi=(p-1)*(q-1);//func Eilera
@@ -41,7 +41,7 @@ int k=2;//mnogitel
 int d = (1 + (k*phi))/e; //вычислить секретную экспоненту
 //d=3;
 std::cout<<"d "<<d<<std::endl;
-int msg=3;
+int msg=4;
 //std::cout<<"input: "<<std::endl;
 //
 //std::cin>>msg;
@@ -58,7 +58,8 @@ std::cout<<"msg: "<<msg<<std::endl;
 
 
 
-int c=int(pow(msg,e))%n;
+long long int c=pow(msg,e);
+c=c%n;
 
 
 std::cout<<"encrypted: "<<c<<std::endl;
@@ -67,7 +68,7 @@ std::cout<<"encrypted: "<<c<<std::endl;
 
 long long int m = pow(c,d);
 
-
+m=m%n;
 std::cout<<"decrypted: "<< m <<std::endl;
 
 return 0;
