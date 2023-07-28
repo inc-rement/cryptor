@@ -58,17 +58,17 @@ std::cout<<"msg: "<<msg<<std::endl;
 
 
 
-int c=modf(int(pow(msg,e)),n);
+int c=int(pow(msg,e))%n;
 
 
 std::cout<<"encrypted: "<<c<<std::endl;
 
 
 
-int m = int(pow(c,d))%n;
+long long int m = pow(c,d);
 
 
-std::cout<<"decrypted: "<<m<<std::endl;
+std::cout<<"decrypted: "<< m <<std::endl;
 
 return 0;
 
