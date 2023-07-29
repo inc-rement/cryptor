@@ -3,6 +3,7 @@
 #include <cfenv>
 #include <cmath>
 #include <iostream>
+#include <string>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,7 +34,7 @@ std::cout<<"d "<<d<<std::endl;
 //public_key=e;
 //private_key=d;
 
-int message;
+char message;
 std::cout<<"input: "<<std::endl;
 //
 std::cin>>message;
@@ -41,7 +42,7 @@ std::cin>>message;
 
 std::cout<<"msg: "<<message<<std::endl;
 //int N = 5;
-//int x = (int)character - 48;
+int x = (int)message;
 
 //std::cout<<N<<std::endl;
 
@@ -54,7 +55,7 @@ std::cout<<"msg: "<<message<<std::endl;
 //c=c%n;
 long long int encrpyted_text = 1;
         while (e--) {
-                encrpyted_text *= message;
+                encrpyted_text *= x;
                 encrpyted_text %= n;
         }
 long long int c=encrpyted_text;
@@ -68,10 +69,10 @@ long long int decrypted = 1;
         }
 
 
-long long int m = decrypted;
+std::cout<<"decrypted: "<<static_cast<char>(decrypted)<<std::endl;
 
 //m=m%n;
-std::cout<<"decrypted: "<< m <<std::endl;
+//std::cout<<"decrypted: "<< decrypted <<std::endl;
 
 return 0;
 
