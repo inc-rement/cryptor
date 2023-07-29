@@ -33,10 +33,10 @@ std::cout<<"d "<<d<<std::endl;
 //public_key=e;
 //private_key=d;
 
-int message=3;
-//std::cout<<"input: "<<std::endl;
+int message;
+std::cout<<"input: "<<std::endl;
 //
-//std::cin>>msg;
+std::cin>>message;
 
 
 std::cout<<"msg: "<<message<<std::endl;
