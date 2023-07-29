@@ -1,126 +1,132 @@
+//#include<stdio.h>
+//#include<math.h>
+#include <cfenv>
+#include <cmath>
+#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-set<int>
-	prime; // a set will be the collection of prime numbers,
-		// where we can select random primes p and q
+
+
 int public_key;
 int private_key;
 int n;
-// we will run the function only once to fill the set of
-// prime numbers
-void primefiller()
+
+
+//naibolsiy obshiy delitel
+int gcd(long int a, long int h)
 {
-	// method used to fill the primes set is seive of
-	// eratosthenes(a method to collect prime numbers)
-	vector<bool> seive(250, true);
-	seive[0] = false;
-	seive[1] = false;
-	for (int i = 2; i < 250; i++) {
-		for (int j = i * 2; j < 250; j += i) {
-			seive[j] = false;
-		}
-	} // filling the prime numbers
-	for (int i = 0; i < seive.size(); i++) {
-		if (seive[i])
-			prime.insert(i);
-	}
+    long int temp;
+    while (1)
+    {
+        temp = a%h;
+        if (temp == 0)
+          return h;
+        a = h;
+        h = temp;
+    }
 }
-// picking a random prime number and erasing that prime
-// number from list because p!=q
-int pickrandomprime()
+/*void setkeys()
 {
-	int k = rand() % prime.size();
-	auto it = prime.begin();
-	while (k--)
-		it++;
-	int ret = *it;
-	prime.erase(it);
-	return ret;
+        int prime1 = 11;//pickrandomprime(); // first prime number
+        int prime2 = 17;//pickrandomprime(); // second prime number
+        // to check the prime numbers selected
+        // cout<<prime1<<" "<<prime2<<endl;
+        n = prime1 * prime2;
+        int fi = (prime1 - 1) * (prime2 - 1);
+        int e = 2;
+        while (1) {
+                if (__gcd(e, fi) == 1)
+                        break;
+                e++;
+        } // d = (k*<CE><A6>(n) + 1) / e for some integer k
+        public_key = e;
+        int d = 2;
+        while (1) {
+                if ((d * e) % fi == 1)
+                        break;
+                d++;
+        }
+        private_key = d;
 }
-void setkeys()
-{
-	int prime1 = pickrandomprime(); // first prime number
-	int prime2 = pickrandomprime(); // second prime number
-	// to check the prime numbers selected
-	// cout<<prime1<<" "<<prime2<<endl;
-	n = prime1 * prime2;
-	int fi = (prime1 - 1) * (prime2 - 1);
-	int e = 2;
-	while (1) {
-		if (__gcd(e, fi) == 1)
-			break;
-		e++;
-	} // d = (k*Φ(n) + 1) / e for some integer k
-	public_key = e;
-	int d = 2;
-	while (1) {
-		if ((d * e) % fi == 1)
-			break;
-		d++;
-	}
-	private_key = d;
-}
-// to encrypt the given number
+*/
 long long int encrypt(double message)
 {
-	int e = public_key;
-	long long int encrpyted_text = 1;
-	while (e--) {
-		encrpyted_text *= message;
-		encrpyted_text %= n;
-	}
-	return encrpyted_text;
+        int e = public_key;
+        long long int encrpyted_text = 1;
+        while (e--) {
+                encrpyted_text *= message;
+                encrpyted_text %= n;
+        }
+        return encrpyted_text;
 }
 // to decrypt the given number
 long long int decrypt(int encrpyted_text)
 {
-	int d = private_key;
-	long long int decrypted = 1;
-	while (d--) {
-		decrypted *= encrpyted_text;
-		decrypted %= n;
-	}
-	return decrypted;
-}
-// first converting each character to its ASCII value and
-// then encoding it then decoding the number to get the
-// ASCII and converting it to character
-vector<int> encoder(string message)
-{
-	vector<int> form;
-	// calling the encrypting function in encoding function
-	for (auto& letter : message)
-		form.push_back(encrypt((int)letter));
-	return form;
-}
-string decoder(vector<int> encoded)
-{
-	string s;
-	// calling the decrypting function decoding function
-	for (auto& num : encoded)
-		s += decrypt(num);
-	return s;
-}
-int main()
-{
-	primefiller();
-	setkeys();
-	string message;//"Test Message+";
-	std::cout<<"input string: "<<std::endl;
-	std::cin>>message;
-	// uncomment below for manual input
-	// cout<<"enter the message\n";getline(cin,message);
-	// calling the encoding function
-	vector<int> coded = encoder(message);
-	cout << "Initial message:\n" << message;
-	cout << "\n\nThe encoded message(encrypted by public "
-			"key)\n";
-	for (auto& p : coded)
-		cout << p;
-	cout << "\n\nThe decoded message(decrypted by private "
-			"key)\n";
-	cout << decoder(coded) << endl;
-	return 0;
+        int d = private_key;
+        long long int decrypted = 1;
+        while (d--) {
+                decrypted *= encrpyted_text;
+                decrypted %= n;
+        }
+        return decrypted;
 }
 
+int main(){
+int p=11,q=17;//prostie chisla
+n=p*q;//module
+std::cout <<"n "<< n << std::endl;
+int phi=(p-1)*(q-1);//func Eilera
+std::cout << "phi " << phi <<std::endl;
+int e=2;//min prostoe
+while(e<phi){
+//nahojdeniye e открытой экспоненты
+if (gcd(e, phi)==1)
+            break;
+        else
+            e++;
 
+}
+//e=7;
+std::cout<<"e "<<e<<std::endl;
+int k=2;//mnogitel
+int d = (1 + (k*phi))/e; //вычислить секретную экспоненту
+//d=3;
+std::cout<<"d "<<d<<std::endl;
+//setkeys();
+public_key=e;
+private_key=d;
+
+int msg=3;
+//std::cout<<"input: "<<std::endl;
+//
+//std::cin>>msg;
+
+
+std::cout<<"msg: "<<msg<<std::endl;
+//int N = 5;
+//int x = (int)character - 48;
+
+//std::cout<<N<<std::endl;
+
+
+//std::cout<<static_cast<char>(N)<<std::endl;
+
+
+
+long long int c=encrypt(msg);
+//c=c%n;
+
+
+std::cout<<"encrypted: "<<encrypt(msg)<<std::endl;
+
+
+
+long long int m = decrypt(c);
+
+//m=m%n;
+std::cout<<"decrypted: "<< decrypt(encrypt(msg)) <<std::endl;
+
+return 0;
+
+
+}

@@ -11,7 +11,7 @@ n = pq
 
 Then the center computes
 
-O(n) = O(pq) = (p-1)(q-1)
+O(n) = O(pq) = (p-1)(q-1) функция Эйлера
 
 Finally the center computes two integers d and e with
 
