@@ -10,45 +10,6 @@ using namespace std;
 int public_key;
 int private_key;
 int n;
-
-
-//naibolsiy obshiy delitel
-int gcd(long int a, long int h)
-{
-    long int temp;
-    while (1)
-    {
-        temp = a%h;
-        if (temp == 0)
-          return h;
-        a = h;
-        h = temp;
-    }
-}
-/*void setkeys()
-{
-        int prime1 = 11;//pickrandomprime(); // first prime number
-        int prime2 = 17;//pickrandomprime(); // second prime number
-        // to check the prime numbers selected
-        // cout<<prime1<<" "<<prime2<<endl;
-        n = prime1 * prime2;
-        int fi = (prime1 - 1) * (prime2 - 1);
-        int e = 2;
-        while (1) {
-                if (__gcd(e, fi) == 1)
-                        break;
-                e++;
-        } // d = (k*<CE><A6>(n) + 1) / e for some integer k
-        public_key = e;
-        int d = 2;
-        while (1) {
-                if ((d * e) % fi == 1)
-                        break;
-                d++;
-        }
-        private_key = d;
-}
-*/
 long long int encrypt(double message)
 {
         int e = public_key;
@@ -80,7 +41,7 @@ std::cout << "phi " << phi <<std::endl;
 int e=2;//min prostoe
 while(e<phi){
 //nahojdeniye e открытой экспоненты
-if (gcd(e, phi)==1)
+if (__gcd(e, phi)==1)
             break;
         else
             e++;
@@ -117,14 +78,14 @@ long long int c=encrypt(msg);
 //c=c%n;
 
 
-std::cout<<"encrypted: "<<encrypt(msg)<<std::endl;
+std::cout<<"encrypted: "<<c<<std::endl;
 
 
 
 long long int m = decrypt(c);
 
 //m=m%n;
-std::cout<<"decrypted: "<< decrypt(encrypt(msg)) <<std::endl;
+std::cout<<"decrypted: "<< m <<std::endl;
 
 return 0;
 
