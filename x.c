@@ -36,7 +36,11 @@ char *text[255];
 		//if(text[0]=='q')close(0);
 		//printf("You presed %c key\n", text[0]);}
 	//if(event.type==ButtonPress){
-		XSetForeground(dis, gc, white);
+	double x1;// = 1;
+	std::cout<<"input x: "<<std::endl;
+	std::cin>>x1;
+	
+	XSetForeground(dis, gc, white);
 		XDrawLine(dis, win, gc, 500, 1000, 500, 0);
                 XDrawLine(dis, win, gc, 0, 500, 1000, 500);
                 for(int i=10;i<120;i+=10)
@@ -54,14 +58,17 @@ char *text[255];
 /////XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
 //XDrawPoint(dis, win ,gc, (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
 //XDrawPoint(dis, win ,gc, (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
-double x1 = 1;
-double m = (x1+1);
-double y1 = (pow(x1,2));//pow(x1,3)-25*x1));
+//double x1;// = 1;
+//std::cout<<"input x: "<<std::endl;
+//std::cin>>x1;
+double m;
+if(x1<0)m=x1-1;else m=x1+1;
+double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
 XDrawPoint(dis, win ,gc, (x*10)+500, 500-(pow(x,2))*10);
 XDrawPoint(dis, win ,gc, (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
-std::cout<<y1<<std::endl;
+//std::cout<<y1<<std::endl;
 
 //std::cout<<m<<std::endl;
 
