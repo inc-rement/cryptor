@@ -52,14 +52,18 @@ char *text[255];
 //XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),61));
 //XDrawPoint(dis, win ,gc, (x*100+500), ((sqrt(x*(x+1)*(2*x+1)/6)*100))+500);
 /////XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
-XDrawPoint(dis, win ,gc, (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
-XDrawPoint(dis, win ,gc, (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
-double x1 = -3;
-double m = (sqrt(abs(pow(x1,2)-25)));
-XDrawPoint(dis, win ,gc, (x*10)+500, 500-((m*(x-x1))+(sqrt(pow(x1,3)-25*x1))*10));
-std::cout<<(sqrt(pow(x1,3)-25*x1))<<std::endl;
+//XDrawPoint(dis, win ,gc, (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
+//XDrawPoint(dis, win ,gc, (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
+double x1 = 2;
+double m = (x1);
+double y1 = (pow(x1,2));//pow(x1,3)-25*x1));
+//double j = ((m*x1-y1));
+XDrawPoint(dis, win ,gc, (x*10)+500, 500-(pow(x,2))*10);
+XDrawPoint(dis, win ,gc, (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
-std::cout<<m<<std::endl;
+std::cout<<y1<<std::endl;
+
+//std::cout<<m<<std::endl;
 
 //XDrawPoint(dis, win ,gc, (x*10)+500, (((sqrt((pow(x,2)-25)/))*10)+500));
 
