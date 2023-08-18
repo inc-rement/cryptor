@@ -54,8 +54,11 @@ char *text[255];
 /////XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
 XDrawPoint(dis, win ,gc, (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
 XDrawPoint(dis, win ,gc, (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
-double m = (sqrt(abs(pow(-4,2)-25)));
-XDrawPoint(dis, win ,gc, (x*10)+500, 500-(m*(x+4)+(sqrt(pow(-4,3)-25*(-4))))*10);
+double x1 = -3;
+double m = (sqrt(abs(pow(x1,2)-25)));
+XDrawPoint(dis, win ,gc, (x*10)+500, 500-((m*(x-x1))+(sqrt(pow(x1,3)-25*x1))*10));
+std::cout<<(sqrt(pow(x1,3)-25*x1))<<std::endl;
+
 std::cout<<m<<std::endl;
 
 //XDrawPoint(dis, win ,gc, (x*10)+500, (((sqrt((pow(x,2)-25)/))*10)+500));
