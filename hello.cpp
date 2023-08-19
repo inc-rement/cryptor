@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include <X11/Xlib.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +9,7 @@ int main(void) {
    Display *d;
    Window w;
    XEvent e;
-   const char *msg = "X";
+   //const char *msg = "X";
    int s;
 
    d = XOpenDisplay(NULL);
@@ -32,13 +33,20 @@ double x1;// = 1;
    while (1) {
       XNextEvent(d, &e);
       if (e.type == Expose) {
-         XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
+         //XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
          //XDrawString(d, w, DefaultGC(d, s), 10, 50, msg, strlen(msg));
          XDrawLine(d, w, DefaultGC(d, s), 500, 1000, 500, 0);
          XDrawLine(d, w, DefaultGC(d, s), 0, 500, 1000, 500);
          XDrawString(d, w, DefaultGC(d, s), 950, 490, "X", strlen("X"));
          XDrawString(d, w, DefaultGC(d, s), 450, 50, "Y", strlen("Y"));
-
+         for(double x =-5;x<5;x+=0.01){
+//double m;
+//if(x1<0)m=x1-1;else m=x1+1;
+//double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
+//double j = ((m*x1-y1));
+XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,2))*10);
+//XDrawPoint(dis, win ,gc, (x*10)+500, 500-(m*(x-x1)+y1)*10);
+	 }
 
       }
       if (e.type == KeyPress)
