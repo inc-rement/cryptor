@@ -62,12 +62,8 @@ double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,2))*10);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x1*10)+501, 501-y1*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x1*10)+499, 499-y1*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x1*10)+500, 499-y1*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x1*10)+502, 502-y1*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x1*10)+498, 498-y1*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x1*10)+502, 498-y1*10);
+         XDrawLine(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, x1*10+503, 503-y1*10);
+         XDrawLine(d, w, DefaultGC(d, s), x1*10+503, 497-y1*10, x1*10+497, 503-y1*10);
 
 
 
