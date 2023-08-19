@@ -6,8 +6,20 @@ V	big files support
 	docs
 	recursive gcd
 	exp  crypt
+	module programming разбитьь на модули
+V	make x & y labels
+V	make formula label
+V	value grid
+	make tangent line & point led
 
-Элептические кривые Пи
+
+
+https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjnoIDwycSAAxUiRvEDHeKJCzsQFnoECBcQAQ&url=https%3A%2F%2Fhabr.com%2Fru%2Farticles%2F188958%2F&usg=AOvVaw28cxnPClLDQymzXyQ782rM&opi=89978449
+
+https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiH6cKeycSAAxX6Q_EDHcg0B98QFnoECBEQAQ&url=https%3A%2F%2Fmatematikam.ru%2Fcalculate-online%2Fgrafik.php&usg=AOvVaw0X6CEQ60LgjrezPH8txcX7&opi=89978449
+
+
+Элептические кривые Пи сделать потом
 
 
 n = pq
@@ -21,6 +33,11 @@ Finally the center computes two integers d and e with
 e*d mod O(n) = 1
 
 Здесь надо заметить, что сообщение P=19 не должно быть больше n=21. иначе ничего не получится.
+
+Функция Эйлера fi = сложность алгоритма 
+Теорема Эйлера  a^fi(m)=1 (modulo m)
+
+
 
 
 
