@@ -47,7 +47,7 @@ char *text[255];
 		//XDrawLine(dis, win, gc, 90+i, 145, 90+i, 155);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
                 //std::cout<<"elipptic curve sqr(x(x+1)(2x+1))"<<std::endl;
-		for(double x =-5;x<10;x+=0.01){
+		for(double x =-5;x<5;x+=0.01){
 	        //std::cout<<"elipptic curve x^3-x"<<std::endl;
        		//double j=
 	        //XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
