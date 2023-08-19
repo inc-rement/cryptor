@@ -42,7 +42,7 @@ double x1;// = 1;
                 std::cout<<"input x: "<<std::endl;
         std::cin>>x1;
 
-	 for(double x =-5;x<5;x+=0.01){
+	 for(double x =-5.65;x<5.65;x+=0.01){
  double m;
 if(x1<0)m=x1-1;else m=x1+1;
 double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
