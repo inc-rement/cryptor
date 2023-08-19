@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <X11/Xlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -21,25 +21,24 @@ int main(void) {
    s = DefaultScreen(d);
    w = XCreateSimpleWindow(d, RootWindow(d, s), 10, 10, 1000, 1000, 5,
                            WhitePixel(d, s), BlackPixel(d, s));
-   //win=XCreateSimpleWindow(dis, DefaultRootWindow(dis),0,0,1000,1000,5,white,black);
 XSetBackground(d, DefaultGC(d, s), WhitePixel(d, s));
 XSetForeground(d, DefaultGC(d, s), WhitePixel(d, s));
 
-   XSelectInput(d, w, ExposureMask | KeyPressMask);
+   //XSelectInput(d, w, ExposureMask | KeyPressMask);
    XMapWindow(d, w);
 
 double x1;// = 1;
 
    while (1) {
-      XNextEvent(d, &e);
-      if (e.type == Expose) {
+      //XNextEvent(d, &e);
+      //if (e.type == Expose) {
          //XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
          //XDrawString(d, w, DefaultGC(d, s), 10, 50, msg, strlen(msg));
          XDrawLine(d, w, DefaultGC(d, s), 500, 1000, 500, 0);
          XDrawLine(d, w, DefaultGC(d, s), 0, 500, 1000, 500);
          XDrawString(d, w, DefaultGC(d, s), 950, 490, "X", strlen("X"));
          XDrawString(d, w, DefaultGC(d, s), 450, 50, "Y", strlen("Y"));
-                std::cout<<"input x: "<<std::endl;
+        std::cout<<"input x: "<<std::endl;
         std::cin>>x1;
 
 	 for(double x =-5.65;x<5.65;x+=0.01){
@@ -51,11 +50,12 @@ XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,2))*10);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 	 }
 
-      }
-      if (e.type == KeyPress)
-      break;
-	      //  std::cout<<"input x: "<<std::endl;
-      //  std::cin>>x1;
+      //}
+      //if (e.type == KeyPress)
+      //break;
+  //std::cout<<"input x: "<<std::endl;
+  //std::cin>>x1;
+   
    }
 
    XCloseDisplay(d);
