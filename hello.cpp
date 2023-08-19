@@ -39,21 +39,23 @@ double x1;// = 1;
          XDrawLine(d, w, DefaultGC(d, s), 0, 500, 1000, 500);
          XDrawString(d, w, DefaultGC(d, s), 950, 490, "X", strlen("X"));
          XDrawString(d, w, DefaultGC(d, s), 450, 50, "Y", strlen("Y"));
-         for(double x =-5;x<5;x+=0.01){
-//double m;
-//if(x1<0)m=x1-1;else m=x1+1;
-//double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
+                std::cout<<"input x: "<<std::endl;
+        std::cin>>x1;
+
+	 for(double x =-5;x<5;x+=0.01){
+ double m;
+if(x1<0)m=x1-1;else m=x1+1;
+double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,2))*10);
-//XDrawPoint(dis, win ,gc, (x*10)+500, 500-(m*(x-x1)+y1)*10);
+XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 	 }
 
       }
       if (e.type == KeyPress)
-        break;
-        //std::cout<<"input x: "<<std::endl;
-        //std::cin>>x1;
-
+      break;
+	      //  std::cout<<"input x: "<<std::endl;
+      //  std::cin>>x1;
    }
 
    XCloseDisplay(d);
