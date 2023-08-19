@@ -57,17 +57,23 @@ bool f;
 	 }
 	 for(double x =-5.65;x<5.65;x+=0.01){
  double m=0;
-if(x1<0)m=(pow(x1,2))-1;else if(x1>0)m=pow(x1,2)+1; else m=pow(x1,2);
-double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
+//if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
+m=pow(x1,2)+2;
+ double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
-XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,3))*10);
-if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
-if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
+XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-((pow(x,3)))*10);
+//if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
+//if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
+XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
 //         XDrawLine(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, x1*10+503, 503-y1*10);
 //         XDrawLine(d, w, DefaultGC(d, s), x1*10+503, 497-y1*10, x1*10+497, 503-y1*10);
          //XFillRectangle(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 6, 6);
 XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
+
+//XDrawPoint(dis, win ,gc, (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
+//XDrawPoint(dis, win ,gc, (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
+
 
 
 
