@@ -48,7 +48,7 @@ bool f;
 	XDrawLine(d, w, DefaultGC(d, s), 440+i, 510, 440+i, 490);
         XDrawString(d, w, DefaultGC(d, s), 440, 480, "-5", strlen("-5"));
         XDrawString(d, w, DefaultGC(d, s), 550, 480, "5", strlen("5"));
-	XDrawString(d, w, DefaultGC(d, s), 450, 200, "y=x^2", strlen("y=x^2"));
+	XDrawString(d, w, DefaultGC(d, s), 450, 200, "y=x^3", strlen("y=x^3"));
 
 	 if(f){
 	 std::cout<<"input x: "<<std::endl;
@@ -57,11 +57,13 @@ bool f;
 	 }
 	 for(double x =-5.65;x<5.65;x+=0.01){
  double m=0;
-if(x1<0)m=x1-1;else if(x1>0)m=x1+1; else m=x1;
-double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
+if(x1<0)m=(pow(x1,2))-1;else if(x1>0)m=pow(x1,2)+1; else m=pow(x1,2);
+double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
-XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,2))*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
+XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,3))*10);
+if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
+if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
+
 //         XDrawLine(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, x1*10+503, 503-y1*10);
 //         XDrawLine(d, w, DefaultGC(d, s), x1*10+503, 497-y1*10, x1*10+497, 503-y1*10);
          //XFillRectangle(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 6, 6);
