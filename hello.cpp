@@ -30,6 +30,8 @@ XSetForeground(d, DefaultGC(d, s), WhitePixel(d, s));
 double x1;// = 1;
 bool f;
    while (1) {
+  //         XClearWindow(d, w);
+
  	if(f)f=false;else f = true;     
 //XNextEvent(d, &e);
       //if (e.type == Expose) {
@@ -42,9 +44,10 @@ bool f;
 	if(f){
 	 std::cout<<"input x: "<<std::endl;
         std::cin>>x1;
+           XClearWindow(d, w);
 	}
 	 for(double x =-5.65;x<5.65;x+=0.01){
- double m;
+ double m=0;
 if(x1<0)m=x1-1;else m=x1+1;
 double y1 = abs(pow(x1,2));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
