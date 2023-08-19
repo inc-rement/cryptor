@@ -8,7 +8,7 @@ int main(void) {
    Display *d;
    Window w;
    XEvent e;
-   const char *msg = "Hello, World!";
+   const char *msg = "X";
    int s;
 
    d = XOpenDisplay(NULL);
@@ -33,9 +33,11 @@ double x1;// = 1;
       XNextEvent(d, &e);
       if (e.type == Expose) {
          XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
-         XDrawString(d, w, DefaultGC(d, s), 10, 50, msg, strlen(msg));
+         //XDrawString(d, w, DefaultGC(d, s), 10, 50, msg, strlen(msg));
          XDrawLine(d, w, DefaultGC(d, s), 500, 1000, 500, 0);
          XDrawLine(d, w, DefaultGC(d, s), 0, 500, 1000, 500);
+         XDrawString(d, w, DefaultGC(d, s), 950, 490, "X", strlen("X"));
+         XDrawString(d, w, DefaultGC(d, s), 450, 50, "Y", strlen("Y"));
 
 
       }
