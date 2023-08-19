@@ -25,17 +25,20 @@ XSetBackground(d, DefaultGC(d, s), WhitePixel(d, s));
 XSetForeground(d, DefaultGC(d, s), WhitePixel(d, s));
 
    //XSelectInput(d, w, ExposureMask | KeyPressMask);
-   XMapWindow(d, w);
+XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
+   
+XMapWindow(d, w);
 
 double x1;// = 1;
-bool f;
+bool f=true;
    while (1) {
   //         XClearWindow(d, w);
 
- 	if(f)f=false;else f = true;     
+// 	if(f)f=false;else f = true;     
 //XNextEvent(d, &e);
-      //if (e.type == Expose) {
-         //XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
+      //if(e.type==Expose) {
+          if(f)f=false;//else f = true;     
+	 //XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
          //XDrawString(d, w, DefaultGC(d, s), 10, 50, msg, strlen(msg));
          XDrawLine(d, w, DefaultGC(d, s), 500, 1000, 500, 0);
          XDrawLine(d, w, DefaultGC(d, s), 0, 500, 1000, 500);
@@ -50,8 +53,8 @@ bool f;
 	 if(f){
 	 std::cout<<"input x: "<<std::endl;
         std::cin>>x1;
-           XClearWindow(d, w);
-	}
+	XClearWindow(d, w);
+	 }
 	 for(double x =-5.65;x<5.65;x+=0.01){
  double m=0;
 if(x1<0)m=x1-1;else if(x1>0)m=x1+1; else m=x1;
@@ -61,9 +64,19 @@ XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(pow(x,2))*10);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 	 }
 
-      //}
-      //if (e.type == KeyPress)
-      //break;
+//      }
+//      if (e.type == KeyPress)
+	//if(f){
+	 XNextEvent(d, &e);
+	      if(e.type==ButtonPress)
+                //XSetForeground(dis, gc, white);
+              XDrawPoint(d, w, DefaultGC(d, s), e.xbutton.x, e.xbutton.y);
+                
+//     }
+
+
+
+	      //break;
   //std::cout<<"input x: "<<std::endl;
   //std::cin>>x1;
    
