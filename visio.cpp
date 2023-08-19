@@ -30,14 +30,14 @@ XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
 XMapWindow(d, w);
 
 double x1;// = 1;
-bool f=true;
+bool f;
    while (1) {
   //         XClearWindow(d, w);
 
 // 	if(f)f=false;else f = true;     
 //XNextEvent(d, &e);
       //if(e.type==Expose) {
-          if(f)f=false;//else f = true;     
+          if(f)f=false;else f = true;     
 	 //XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 10, 10);
          //XDrawString(d, w, DefaultGC(d, s), 10, 50, msg, strlen(msg));
          XDrawLine(d, w, DefaultGC(d, s), 500, 1000, 500, 0);
@@ -67,10 +67,10 @@ XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //      }
 //      if (e.type == KeyPress)
 	//if(f){
-	 XNextEvent(d, &e);
-	      if(e.type==ButtonPress)
+	 //XNextEvent(d, &e);
+	   //   if(e.type==ButtonPress)
                 //XSetForeground(dis, gc, white);
-              XDrawPoint(d, w, DefaultGC(d, s), e.xbutton.x, e.xbutton.y);
+             // XDrawPoint(d, w, DefaultGC(d, s), e.xbutton.x, e.xbutton.y);
                 
 //     }
 
