@@ -55,24 +55,24 @@ bool f;
         std::cin>>x1;
 	XClearWindow(d, w);
 	 }
-	 for(double x =-5.45;x<7.64;x+=0.01){
+	 for(double x =-5.45;x<70.64;x+=0.01){
  double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
-m=sqrt(pow(x1,2))+2-5;
+m=sqrt(pow(x1,2))+sqrt(2)-5;
 double y1=sqrt((pow(x1,3))-25*x1);
 
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
-//double j = ((m*x1-y1));
+//double j = ((m*xv1-y1));
 //double y1=sqrt(pow(x1,3)-25*x1);
 //XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-((pow(x,3)))*10);
 //if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x)+500, 500-(m*(x-x1)+y1));
+//XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
-XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
-double x3=((pow(m,2))-2*x1);
-if(x1>0)x3=((pow(m,2))+2*x1);
+//XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
+double x3=((pow(m,2))-x1-x1);
+if(x1>0)x3=((pow(m,2))+x1-x1);
 
 XDrawArc(d, w, DefaultGC(d, s), 497+x3, 497-(m*(x1-x3)-y1), 5, 5, 0, 360 * 64);
 
@@ -81,13 +81,12 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x)+500, ((sqrt(pow(x,3)-25*x))+500));
 
 
 
-
 	 }
 
 //      }
 //      if (e.type == KeyPress)
 	//if(f){
-	 //XNextEvent(d, &e);
+	 //XNextEvent(d, &e);vb
 	   //   if(e.type==ButtonPress)
                 //XSetForeground(dis, gc, white);
              // XDrawPoint(d, w, DefaultGC(d, s), e.xbutton.x, e.xbutton.y);
