@@ -58,9 +58,10 @@ bool f;
 	 for(double x =-5.45;x<7.64;x+=0.01){
  double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
-m=sqrt(abs(pow(x1,2)))+2-5;
-double y1=sqrt(pow(x1,3)-25*x1);
-if(x1==0)m=sqrt(abs(pow(x1,2))-5);
+m=sqrt(pow(x1,2))+2-5;
+double y1=sqrt((pow(x1,3))-25*x1);
+
+//if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
 //double y1=sqrt(pow(x1,3)-25*x1);
@@ -70,12 +71,13 @@ if(x1==0)m=sqrt(abs(pow(x1,2))-5);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
 XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
-double x3=(pow(m,2)-2*x1);
+double x3=((pow(m,2))-2*x1);
+if(x1>0)x3=((pow(m,2))+2*x1);
 
-XDrawArc(d, w, DefaultGC(d, s), x3*10+497, 497-(m*(x1-x3)-y1)*10, 5, 5, 0, 360 * 64);
+XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-(m*(x1-x3)-y1)*10, 5, 5, 0, 360 * 64);
 
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-((sqrt(pow(x,3)-25*x)))*10);
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, ((sqrt(pow(x,3)-25*x))*10+500));
 
 
 
