@@ -48,7 +48,7 @@ bool f;
 	XDrawLine(d, w, DefaultGC(d, s), 440+i, 510, 440+i, 490);
         XDrawString(d, w, DefaultGC(d, s), 440, 480, "-5", strlen("-5"));
         XDrawString(d, w, DefaultGC(d, s), 550, 480, "5", strlen("5"));
-	XDrawString(d, w, DefaultGC(d, s), 450, 200, "y=x^3", strlen("y=x^3"));
+	XDrawString(d, w, DefaultGC(d, s), 400, 200, "y^2=x^3-25x", strlen("y^2=x^3-25x"));
 
 	 if(f){
 	 std::cout<<"input x: "<<std::endl;
@@ -59,16 +59,20 @@ bool f;
  double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
 m=sqrt(abs(pow(x1,2)))+2-5;
-//if(x1==0)m=pow(x1,2);
+double y1=sqrt(pow(x1,3)-25*x1);
+if(x1==0)m=sqrt(abs(pow(x1,2))-5);
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*x1-y1));
-double y1=sqrt(pow(x1,3)-25*x1);
+//double y1=sqrt(pow(x1,3)-25*x1);
 //XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-((pow(x,3)))*10);
 //if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
 XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
+double x3=(pow(m,2)-2*x1);
+
+XDrawArc(d, w, DefaultGC(d, s), x3*10+497, 497-(m*(x1-x3)-y1)*10, 5, 5, 0, 360 * 64);
 
 XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
 XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
