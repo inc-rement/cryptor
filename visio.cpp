@@ -55,10 +55,11 @@ bool f;
         std::cin>>x1;
 	XClearWindow(d, w);
 	 }
-	 for(double x =-5.45;x<7.64;x+=0.01){
+	 for(double x =-5.45;x<11.64;x+=0.01){
  double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
-m=sqrt(pow(x1,2))+2.5-5;
+m=sqrt(pow(x1,2))-5+2;
+m=m*2;
 double y1=sqrt((pow(x1,3))-25*x1);
 
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
@@ -74,13 +75,13 @@ XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
 double x3=((pow(m,2))-2*x1);
 if(x1>0)x3=((pow(m,2))+x1-x1);
 
-XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-(m*(x1-x3)-y1)*10, 5, 5, 0, 360 * 64);
+//XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-(m*(x1-x3)-y1)*10, 5, 5, 0, 360 * 64);
 
 XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)-25*x))*10);
 XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
 
-std::cout<<m*(x1-x3)-y1<<std::endl;
-std::cout<<sqrt(pow(x3,3)-25*x3)<<std::endl;
+//std::cout<<m*(x1-x3)-y1<<std::endl;
+//std::cout<<sqrt(pow(x3,3)-25*x3)<<std::endl;
 	 }
 
 //      }
