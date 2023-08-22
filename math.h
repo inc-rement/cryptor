@@ -14,20 +14,20 @@ class Line{
         };
 };
 
-class Curve{
+class Curve:public Line{
     private:
-        int A, B, C, D;
+        int C, D;
     public:
         Curve();
         Curve(int A, int B, int C, int D);
         ~Curve();
-        bool isZeroDiscriminant();
-        int getA(){
-            return this->A;
-        };
-        int getB(){
-            return this->B;
-        };
+        //bool isZeroDiscriminant();
+        //int getA(){
+        //    return this->A;
+        //};
+        //int getB(){
+        //    return this->B;
+        //};
 	int getC(){
 	    return this->C;
 	};
