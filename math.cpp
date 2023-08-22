@@ -1,10 +1,10 @@
 #include "math.h"
-Curve::Curve(int A, int B, int C, int D)
+Curve::Curve(int _A, int _B, int _C, int _D):A(_A),B(_B),C(_C),D(_D)
     {
-    this->A=A;
-    this->B=B;
-    this->C=C;
-    this->D=D;
+    //this->A=A;
+    //this->B=B;
+    //this->C=C;
+    //this->D=D;
 
     //if (this->isZeroDiscriminant()){
     //    std::cerr << "[!] Curve not defined, disriminant is Zero" << std::endl;
