@@ -16,10 +16,10 @@ class Line{
 
 class Curve:public Line{
     private:
-        int C, D;
+        int C;
     public:
         Curve();
-        Curve(int A, int B, int C, int D);
+        Curve(int A, int B, int C);
         ~Curve();
         //bool isZeroDiscriminant();
         //int getA(){
@@ -31,18 +31,19 @@ class Curve:public Line{
 	int getC(){
 	    return this->C;
 	};
-	int getD(){
-	    return this->D;
-	};
-
 
 };
 
 class EllipticCurve:public Curve{
-public:
+	private:
+	int D;
+	public:
     EllipticCurve();
     EllipticCurve(int A, int B, int C, int D);
     ~EllipticCurve();
+       int getD(){
+            return this->D;
+        };
 
 
 
