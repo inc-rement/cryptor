@@ -1,3 +1,19 @@
+class Line{
+    private:
+        int A, B;
+    public:
+        Line();
+        Line(int A, int B);
+        ~Line();
+        bool isZeroDiscriminant();
+        int getA(){
+            return this->A;
+        };
+        int getB(){
+            return this->B;
+        };
+};
+
 class Curve{
     private:
         int A, B, C, D;
