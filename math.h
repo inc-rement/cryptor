@@ -1,9 +1,9 @@
 class Curve{
     private:
-        int A,B;
+        int A, B, C, D;
     public:
         Curve();
-        Curve(int A, int B);
+        Curve(int A, int B, int C, int D);
         ~Curve();
         bool isZeroDiscriminant();
         int getA(){
@@ -12,6 +12,12 @@ class Curve{
         int getB(){
             return this->B;
         };
+	int getC(){
+	    return this->C;
+	};
+	int getD(){
+	    return this->D;
+	};
 
 
 };
@@ -19,7 +25,7 @@ class Curve{
 class EllipticCurve:public Curve{
 public:
     EllipticCurve();
-    EllipticCurve(int A, int B);
+    EllipticCurve(int A, int B, int C, int D);
     ~EllipticCurve();
 
 

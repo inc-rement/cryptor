@@ -4,7 +4,8 @@
 //#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "math.h"
+class EllipticCurve;
 int main(void) {
    Display *d;
    Window w;
@@ -28,6 +29,8 @@ XSetForeground(d, DefaultGC(d, s), WhitePixel(d, s));
 XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
    
 XMapWindow(d, w);
+
+EllipticCurve ecc(0,-25, 0, 0);
 
 double x1;// = 1;
 bool f;
