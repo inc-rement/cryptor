@@ -69,7 +69,8 @@ double y1=sqrt((pow(x1,3))-25*x1);
 //XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-((pow(x,3)))*10);
 //if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
-XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
+XDrawPoint(d, w, DefaultGC(d, s), (x*30)+500, 500-sqrt(1-pow(x,2))*30);//(m*(x-x1)+y1)*10);
+XDrawPoint(d, w, DefaultGC(d, s), (x*30)+500, 500+sqrt(1-pow(x,2))*30);//(m*(x-x1)+y1)*10);
 
 XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
 double x3=((pow(m,2))-2*x1);
@@ -77,8 +78,8 @@ double x3=((pow(m,2))-2*x1);
 
 //XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-(m*(x1-x3)-y1)*10, 5, 5, 0, 360 * 64);
 
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)-25*x))*10);
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
+//XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)-25*x))*10);
+//XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
 
 std::cout<<m*(x1-x3)-y1<<std::endl;
 std::cout<<sqrt(abs(pow(x3,3))-25*x3)<<std::endl;
