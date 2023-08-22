@@ -1,3 +1,42 @@
+class Point
+{
+private:
+    
+    bool identity;
+    int x,y;
+public:
+
+    Point() : identity(true) {}
+    Point(bool b);
+    Point(int x, int y);
+    int getX() const{
+        return this->x;
+    };
+    int setX(int _x){
+        this->x = _x;
+    }
+    int getY() const{
+        return this->y;
+    };
+
+    void setY(int _y) {
+        this->y = _y;
+    };
+
+    bool isIdentity() const{
+        return this->identity;
+    };
+
+    void setIdentity(bool _identity){
+        this->identity = _identity;
+    };
+
+    //Point operator=(const Point& P);
+    //bool operator==(const Point& P) const;
+    //void print();
+};
+
+
 class Line{
     private:
         int A, B;
