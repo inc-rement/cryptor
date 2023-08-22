@@ -76,6 +76,7 @@ class Curve:public Line{
 class EllipticCurve:public Curve{
 	private:
 	int D;
+	Point identity;
 	public:
     EllipticCurve();
     EllipticCurve(int A, int B, int C, int D);
@@ -83,7 +84,9 @@ class EllipticCurve:public Curve{
        int getD(){
             return this->D;
         };
-
+        const Point& _inv(Point& Q, const Point& P);
+	    bool verifyPoint(const Point& P) const;
+       Point& _double(Point& R, const Point& P);
 
 
 
