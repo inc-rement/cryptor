@@ -30,7 +30,7 @@ XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
    
 XMapWindow(d, w);
 
-EllipticCurve ecc(1, -25, 1, 1);
+EllipticCurve ecc(0, -25, 0, 1);
 
 double y1;
 double x3;

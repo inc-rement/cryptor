@@ -1,4 +1,22 @@
 #include "math.h"
+
+
+Point Point::operator =(const Point& P) {
+        if(P.identity)
+            {
+            this->identity = true;
+            return *this;
+            }
+
+            this->identity=P.identity;
+            this->x = P.x;
+            this->y = P.y;
+            return *this;
+}
+
+
+
+
 Line::Line(int _A, int _B):A(_A),B(_B){}
 Line::Line(){}
 Line::~Line(){}
@@ -38,7 +56,7 @@ const Point& EllipticCurve::_inv(Point& Q, const Point& P) {
         Q.setY(tmp);
                 return Q;
         }
-        }
+}
 
 
 Point& EllipticCurve::_double(Point& R, const Point& P) {

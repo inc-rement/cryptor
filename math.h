@@ -31,7 +31,7 @@ public:
         this->identity = _identity;
     };
 
-    //Point operator=(const Point& P);
+    Point operator=(const Point& P);
     //bool operator==(const Point& P) const;
     //void print();
 };
