@@ -90,8 +90,8 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
 
 
 if(f){
-std::cout<<m*(x1-x3)-y1<<std::endl;
-std::cout<<sqrt(abs(pow(x3,3))+ecc.getB()*x3)<<std::endl;
+std::cout<<std::round((m*(x1-x3)-y1)*0.1)<<std::endl;
+std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*x3)*0.1))<<std::endl;
 }
 
 //      }
