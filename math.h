@@ -3,23 +3,24 @@ class Point
 private:
     
     bool identity;
-    int x,y;
 public:
+    double x,y;
+
 
     Point() : identity(true) {}
     Point(bool b);
     Point(int x, int y);
-    int getX() const{
+    double getX() const{
         return this->x;
     };
-    void setX(int _x){
+    void setX(double _x){
         this->x = _x;
     }
-    int getY() const{
+    double getY() const{
         return this->y;
     };
 
-    void setY(int _y) {
+    void setY(double _y) {
         this->y = _y;
     };
 

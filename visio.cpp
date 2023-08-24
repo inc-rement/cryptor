@@ -31,7 +31,7 @@ XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
 XMapWindow(d, w);
 
 EllipticCurve ecc(0, -25, 0, 1);
-
+Point p;
 double y1;
 double x3, y3;
 double m=0;
@@ -81,6 +81,9 @@ XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
 x3=((pow(m,2))-2*x1);
 y3=(m*(x1-x3)-y1);
+
+p.x=x3;
+p.y=y3;
 //if(x1>0)x3=((pow(m,2))+x1-x1);
 
 XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-y3*10, 5, 5, 0, 360 * 64);
@@ -93,7 +96,11 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
 if(f){
 std::cout<<"---------"<<std::endl;
 std::cout<<std::round((m*(x1-x3)-y1)*0.1)<<std::endl;
-std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*x3)*0.1))<<std::endl;
+std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*(p.x))*0.1))<<std::endl;
+
+std::cout<<x3<<" "<<p.x<<std::endl;
+std::cout<<y3<<" "<<p.y<<std::endl;
+
 }
 
 //      }
