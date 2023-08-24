@@ -32,6 +32,7 @@ XMapWindow(d, w);
 
 EllipticCurve ecc(0, -25, 0, 1);
 Point p;
+Point t;
 double y1;
 double x3, y3;
 double m=0;
@@ -59,6 +60,7 @@ bool f;
 	 if(f){
 	 std::cout<<"input x: "<<std::endl;
         std::cin>>x1;
+	t.setX(x1);
 	XClearWindow(d, w);
 	 }
 	 for(double x =-5.45;x<11.64;x+=0.01){
@@ -67,7 +69,7 @@ bool f;
 m=sqrt(pow(x1,2))-5+3;
 m=m*m;
 y1=sqrt((pow(x1,3))-25*x1);
-
+t.setY(y1);
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*xv1-y1));
@@ -78,7 +80,7 @@ y1=sqrt((pow(x1,3))-25*x1);
 Line tangent(1,1);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
-XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
+XDrawArc(d, w, DefaultGC(d, s), t.getX()*10+497, 497-t.getY()*10, 5, 5, 0, 360 * 64);
 x3=((pow(m,2))-2*x1);
 y3=(m*(x1-x3)-y1);
 
@@ -98,8 +100,8 @@ std::cout<<"---------"<<std::endl;
 std::cout<<std::round(p.getY()*0.1)<<std::endl;
 std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())*0.1))<<std::endl;
 
-std::cout<<x3<<" "<<p.getX()<<std::endl;
-std::cout<<y3<<" "<<p.getY()<<std::endl;
+//std::cout<<x3<<" "<<p.getX()<<std::endl;
+//std::cout<<y3<<" "<<p.getY()<<std::endl;
 
 }
 
