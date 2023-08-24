@@ -3,9 +3,8 @@ class Point
 private:
     
     bool identity;
-public:
     double x,y;
-
+public:
 
     Point() : identity(true) {}
     Point(bool b);

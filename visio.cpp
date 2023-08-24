@@ -82,8 +82,8 @@ XDrawArc(d, w, DefaultGC(d, s), x1*10+497, 497-y1*10, 5, 5, 0, 360 * 64);
 x3=((pow(m,2))-2*x1);
 y3=(m*(x1-x3)-y1);
 
-p.x=x3;
-p.y=y3;
+p.setX(x3);
+p.setY(y3);
 //if(x1>0)x3=((pow(m,2))+x1-x1);
 
 XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-y3*10, 5, 5, 0, 360 * 64);
@@ -95,11 +95,11 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
 
 if(f){
 std::cout<<"---------"<<std::endl;
-std::cout<<std::round((m*(x1-x3)-y1)*0.1)<<std::endl;
-std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*(p.x))*0.1))<<std::endl;
+std::cout<<std::round(p.getY()*0.1)<<std::endl;
+std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())*0.1))<<std::endl;
 
-std::cout<<x3<<" "<<p.x<<std::endl;
-std::cout<<y3<<" "<<p.y<<std::endl;
+std::cout<<x3<<" "<<p.getX()<<std::endl;
+std::cout<<y3<<" "<<p.getY()<<std::endl;
 
 }
 

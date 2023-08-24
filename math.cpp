@@ -100,8 +100,9 @@ Point& EllipticCurve::_double(Point& R, const Point& P) {
 
         R.setX(x3);
         R.setY(y3);
-        return R;
-                }*/
+        */
+	return R;
+        //        }
         }
 bool EllipticCurve::verifyPoint(const Point& P) const {
         if(P.isIdentity())
