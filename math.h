@@ -12,7 +12,7 @@ public:
     int getX() const{
         return this->x;
     };
-    int setX(int _x){
+    void setX(int _x){
         this->x = _x;
     }
     int getY() const{
