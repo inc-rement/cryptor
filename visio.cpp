@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "math.h"
+#include <iomanip>
 class EllipticCurve;
 int main(void) {
    Display *d;
@@ -33,6 +34,7 @@ XMapWindow(d, w);
 EllipticCurve ecc(0, -25, 0, 1);
 Point p;
 Point t;
+Point m1;
 double y1;
 double x3, y3;
 double m=0;
@@ -69,7 +71,7 @@ bool f;
 m=sqrt(pow(x1,2))-5+3;
 m=m*m;
 y1=sqrt((pow(x1,3))-25*x1);
-t.setY(y1);
+t.setY((double)y1);
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*xv1-y1));
@@ -86,6 +88,9 @@ y3=(m*(x1-x3)-y1);
 
 p.setX(x3);
 p.setY(y3);
+p.a=(123456789.987654321);
+p.b=(987654321.123456789);
+
 //if(x1>0)x3=((pow(m,2))+x1-x1);
 
 XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-y3*10, 5, 5, 0, 360 * 64);
@@ -99,9 +104,9 @@ if(f){
 std::cout<<"---------"<<std::endl;
 std::cout<<std::round(p.getY()*0.1)<<std::endl;
 std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())*0.1))<<std::endl;
-
-//std::cout<<x3<<" "<<p.getX()<<std::endl;
-//std::cout<<y3<<" "<<p.getY()<<std::endl;
+std::cout << std::setprecision(20);
+std::cout<<p.a.get_d()<<std::endl;
+std::cout<<p.b.get_d()<<std::endl;
 
 }
 

@@ -1,6 +1,7 @@
 #include "math.h"
 
 
+
 Point Point::operator =(const Point& P) {
         if(P.identity)
             {
@@ -60,7 +61,7 @@ const Point& EllipticCurve::_inv(Point& Q, const Point& P) {
 
 
 Point& EllipticCurve::_double(Point& R, const Point& P) {
-        Point tmp;
+       // Point tmp;
 /*        this->_inv(tmp,P);
         if(P.isIdentity() || (tmp == P))
             {

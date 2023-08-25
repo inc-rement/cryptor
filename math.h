@@ -1,3 +1,5 @@
+#include <gmpxx.h>
+
 class Point
 {
 private:
@@ -5,7 +7,7 @@ private:
     bool identity;
     double x,y;
 public:
-
+    mpq_class a, b;
     Point() : identity(true) {}
     Point(bool b);
     Point(int x, int y);
