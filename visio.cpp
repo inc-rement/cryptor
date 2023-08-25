@@ -68,10 +68,12 @@ bool f;
 	 for(double x =-5.45;x<11.64;x+=0.01){
 // double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
-m=sqrt(pow(x1,2))-5+3;
+m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
-y1=sqrt((pow(x1,3))-25*x1);
-t.setY((double)y1);
+t.setY(sqrt((pow(t.getX(),3))+ecc.getB()*t.getX()));
+y1=t.getY();
+x1=t.getX();
+//t.setY((double)y1);
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
 //double j = ((m*xv1-y1));
