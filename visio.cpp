@@ -88,8 +88,8 @@ y3=(m*(x1-x3)-y1);
 
 p.setX(x3);
 p.setY(y3);
-p.a=(123456789.987654321);
-p.b=(987654321.123456789);
+m1.seta(123456789.987654321);
+m1.setb(987654321.123456789);
 
 //if(x1>0)x3=((pow(m,2))+x1-x1);
 
@@ -105,8 +105,8 @@ std::cout<<"---------"<<std::endl;
 std::cout<<std::round(p.getY()*0.1)<<std::endl;
 std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())*0.1))<<std::endl;
 std::cout << std::setprecision(20);
-std::cout<<p.a.get_d()<<std::endl;
-std::cout<<p.b.get_d()<<std::endl;
+std::cout<<m1.geta().get_d()<<std::endl;
+std::cout<<m1.getb().get_d()<<std::endl;
 
 }
 
