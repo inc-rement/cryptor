@@ -35,7 +35,7 @@ EllipticCurve ecc(0, -25, 0, 1);
 Point p;
 Point t;
 Point m1;
-mpf_class c;
+mpf_class c,g;
 double y1;
 double x3, y3;
 double m=0;
@@ -71,7 +71,9 @@ bool f;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
 t.seta(t.getX());
 mpf_pow_ui(c.get_mpf_t(), t.geta().get_mpf_t(), 2);
- m=sqrt(pow(t.getX(),2))-5+3;
+mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+
+m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
 
 t.setY(sqrt((pow(t.getX(),3))+ecc.getB()*t.getX()));
