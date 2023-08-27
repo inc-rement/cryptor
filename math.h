@@ -6,7 +6,7 @@ private:
     
     bool identity;
     double x,y;
-    mpq_class a, b;
+    mpf_class a, b;
 public:
     Point() : identity(true) {}
     Point(bool b);
@@ -24,13 +24,13 @@ public:
     void setY(double _y) {
         this->y = _y;
     };
-    mpq_class geta() const{
+    mpf_class geta() const{
         return this->x;
     };
     void seta(double _x){
         this->x = _x;
     }
-    mpq_class getb() const{
+    mpf_class getb() const{
         return this->y;
     };
 
