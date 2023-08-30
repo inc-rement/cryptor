@@ -32,6 +32,7 @@ XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
 XMapWindow(d, w);
 
 EllipticCurve ecc(0, -25, 0, 1);
+EllipticCurve ecc1(0,1/6,1/2,1/3);
 Point p;
 Point t;
 Point m1;
@@ -73,7 +74,8 @@ t.seta(t.getX());
 mpf_pow_ui(c.get_mpf_t(), t.geta().get_mpf_t(), 2);
 mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
-m=sqrt(pow(t.getX(),2))-5+3;
+m=g.get_d()-5+3;
+//m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
 
 t.setY(sqrt((pow(t.getX(),3))+ecc.getB()*t.getX()));
@@ -87,6 +89,7 @@ x1=t.getX();
 //XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-((pow(x,3)))*10);
 //if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
+
 Line tangent(1,1);
 XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 
@@ -110,8 +113,8 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
 
 if(f){
 std::cout<<"---------"<<std::endl;
-std::cout<<std::round(p.getY()*0.1)<<std::endl;
-std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())*0.1))<<std::endl;
+std::cout<<std::round(p.getY())<<std::endl;
+std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())))<<std::endl;
 std::cout << std::setprecision(20);
 std::cout<<m1.geta().get_d()<<std::endl;
 std::cout<<m1.getb().get_d()<<std::endl;
