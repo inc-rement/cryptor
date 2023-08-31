@@ -109,13 +109,13 @@ bool f;
 
 ///XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)-25*x))*10);
 ///XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
-//XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
-//XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
 
 
 
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(((x)*(x+1)*(2*x+1))/6)*10));
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(((x)*(x+1)*(2*x+1))/6)*10)+500);
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt((((x)*(x+1))*(2*x+1))/6)*10));
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt((((x)*(x+1))*(2*x+1))/6)*10)+500);
 
 
 
