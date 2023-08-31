@@ -7,6 +7,7 @@
 #include "math.h"
 #include <iomanip>
 class EllipticCurve;
+
 int main(void) {
    Display *d;
    Window w;
@@ -108,8 +109,13 @@ bool f;
 
 ///XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)-25*x))*10);
 ///XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
+//XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
+//XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
+
+
+
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(((x)*(x+1)*(2*x+1))/6)*10));
+XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(((x)*(x+1)*(2*x+1))/6)*10)+500);
 
 
 
@@ -120,7 +126,7 @@ if(f){
 std::cout<<"---------"<<std::endl;
 //std::cout<<std::round(p.getY())<<std::endl;
 //std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())))<<std::endl;
-//std::cout << std::setprecision(20);
+//std::cout << stvd::setprecision(20);
 //std::cout<<m1.geta().get_d()<<std::endl;
 //std::cout<<m1.getb().get_d()<<std::endl;
 
