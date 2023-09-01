@@ -39,7 +39,7 @@ Point m1;
 mpf_class c,g;
 double y1;
 double x3, y3;
-double m=0;
+mpf_class m=0;
 double x1;// = 1;
 bool f;
    while (1) {
@@ -71,10 +71,10 @@ bool f;
 // double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
 ///t.seta(t.getX());
-///mpf_pow_ui(c.get_mpf_t(), t.geta().get_mpf_t(), 2);
-///mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+mpf_pow_ui(c.get_mpf_t(), t.getX().get_mpf_t(), 2);
+mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
-///m=g.get_d()-5+3;
+m=g-5+3;
 //m=sqrt(pow(t.getX(),2))-5+3;
 ///m=m*m;
 
@@ -129,6 +129,8 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)+pow(x,2)*3/2+1/2*x)
 
 if(f){
 std::cout<<"---------"<<std::endl;
+std::cout<<m<<std::endl;
+
 //std::cout<<std::round(p.getY())<<std::endl;
 //std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())))<<std::endl;
 //std::cout << stvd::setprecision(20);
