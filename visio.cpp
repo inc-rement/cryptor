@@ -22,9 +22,9 @@ int main(void) {
    }
 
    s = DefaultScreen(d);
-   w = XCreateSimpleWindow(d, RootWindow(d, s), 30, 30, 1000, 1000, 5, BlackPixel(d, s), WhitePixel(d, s));
-//XSetBackground(d, DefaultGC(d, s), WhitePixel(d, s));
-//XSetForeground(d, DefaultGC(d, s), WhitePixel(d, s));
+   w = XCreateSimpleWindow(d, RootWindow(d, s), 30, 30, 1000, 1000, 5, WhitePixel(d, s), BlackPixel(d, s));
+XSetBackground(d, DefaultGC(d, s), WhitePixel(d, s));
+XSetForeground(d, DefaultGC(d, s), WhitePixel(d, s));
 
    //XSelectInput(d, w, ExposureMask | KeyPressMask);
 XSelectInput(d, w, ExposureMask | ButtonPressMask | KeyPressMask);
