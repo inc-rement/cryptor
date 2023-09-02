@@ -156,7 +156,9 @@ mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
 
 std::cout<<g<<std::endl;
-//std::cout << stvd::setprecision(20);
+
+
+std::cout << (p.getY()-g)/p.getY()<<std::endl;
 //std::cout<<m1.geta().get_d()<<std::endl;
 //std::cout<<m1.getb().get_d()<<std::endl;
 
