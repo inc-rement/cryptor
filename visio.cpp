@@ -38,7 +38,7 @@ Point t;
 Point m1;
 mpf_class c,g;
 mpf_class y1;
-double x3, y3;
+mpf_class x3, y3;
 mpf_class m=0;
 mpf_class x1;// = 1;
 bool f;
@@ -74,7 +74,7 @@ bool f;
 mpf_pow_ui(c.get_mpf_t(), t.getX().get_mpf_t(), 2);
 mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
-m=g-5+3;
+m=g-5+2;
 //m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
 
@@ -105,11 +105,15 @@ XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 
 ///XDrawArc(d, w, DefaultGC(d, s), t.getX()*10+497, 497-t.getY()*10, 5, 5, 0, 360 * 64);
-///x3=((pow(m,2))-2*x1);
-///y3=(m*(x1-x3)-y1);
 
-///p.setX(x3);
-///p.setY(y3);
+mpf_pow_ui(c.get_mpf_t(), m.get_mpf_t(), 2);
+c=c-2*x1;
+x3=c;
+
+y3=(m*(x1-x3)-y1);
+
+p.setX(x3);
+p.setY(y3);
 ///m1.seta(123456789.987654321);
 ///m1.setb(987654321.123456789);
 
@@ -140,10 +144,18 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, (sqrt(pow(x.get_d(),3)-25*
 
 if(f){
 std::cout<<"---------"<<std::endl;
-std::cout<<m<<std::endl;
+//std::cout<<m<<std::endl;
 
-//std::cout<<std::round(p.getY())<<std::endl;
-//std::cout<<std::round((sqrt(abs(pow(x3,3))+ecc.getB()*p.getX())))<<std::endl;
+std::cout<<p.getY()<<std::endl;
+
+mpf_pow_ui(c.get_mpf_t(), p.getX().get_mpf_t(), 3);
+c=c+ecc.getB()*p.getX();
+
+mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+
+
+
+std::cout<<g<<std::endl;
 //std::cout << stvd::setprecision(20);
 //std::cout<<m1.geta().get_d()<<std::endl;
 //std::cout<<m1.getb().get_d()<<std::endl;
