@@ -37,10 +37,10 @@ Point p;
 Point t;
 Point m1;
 mpf_class c,g;
-double y1;
+mpf_class y1;
 double x3, y3;
 mpf_class m=0;
-double x1;// = 1;
+mpf_class x1;// = 1;
 bool f;
    while (1) {
      //      XClearWindow(d, w);
@@ -67,7 +67,7 @@ bool f;
 	t.setX(x1);
 	XClearWindow(d, w);
 	 }
-	 for(double x =-5.45;x<11.64;x+=0.01){
+	 for(mpf_class x =-5.45;x<11.64;x+=0.01){
 // double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
 ///t.seta(t.getX());
@@ -76,11 +76,17 @@ mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
 m=g-5+3;
 //m=sqrt(pow(t.getX(),2))-5+3;
-///m=m*m;
+m=m*m;
 
-///t.setY(sqrt((pow(t.getX(),3))+ecc.getB()*t.getX()));
-///y1=t.getY();
-///x1=t.getX();
+mpf_pow_ui(c.get_mpf_t(), t.getX().get_mpf_t(), 3);
+c=c+ecc.getB()*t.getX();
+
+mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+
+
+t.setY(g);
+y1=t.getY();
+x1=t.getX();
 //t.setY((double)y1);
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
@@ -90,8 +96,13 @@ m=g-5+3;
 //if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
 
-///Line tangent(1,1);
-///XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
+mpf_class X, Y;
+X=((x*10)+500);
+Y=500-(m*(x-x1)+y1)*10;
+
+Line tangent(1,1);
+XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
+XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 
 ///XDrawArc(d, w, DefaultGC(d, s), t.getX()*10+497, 497-t.getY()*10, 5, 5, 0, 360 * 64);
 ///x3=((pow(m,2))-2*x1);
@@ -106,19 +117,19 @@ m=g-5+3;
 
 ///XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-y3*10, 5, 5, 0, 360 * 64);
 
-///XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)-25*x))*10);
-///XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)-25*x)*10)+500);
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
+XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, 500-(sqrt(pow(x.get_d(),3)-25*x.get_d()))*10);
+XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, (sqrt(pow(x.get_d(),3)-25*x.get_d())*10)+500);
+////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
+////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
 
 
 
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt((((x)*(x+1))*(2*x+1))/6)*10));
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt((((x)*(x+1))*(2*x+1))/6)*10)+500);
+////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt((((x)*(x+1))*(2*x+1))/6)*10));
+////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt((((x)*(x+1))*(2*x+1))/6)*10)+500);
 
 
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)+pow(x,2)*3/2+1/2*x))*10);
-XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)+pow(x,2)*3/2+1/2*x)*10)+500);
+////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)+pow(x,2)*3/2+1/2*x))*10);
+////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)+pow(x,2)*3/2+1/2*x)*10)+500);
 
 
 

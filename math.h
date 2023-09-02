@@ -5,23 +5,23 @@ class Point
 private:
     
     bool identity;
-    double x,y;
+    mpf_class x,y;
     mpf_class a, b;
 public:
     Point() : identity(true) {}
     Point(bool b);
     Point(int x, int y);
-    double getX() const{
+    mpf_class getX() const{
         return this->x;
     };
-    void setX(double _x){
+    void setX(mpf_class _x){
         this->x = _x;
     }
-    double getY() const{
+    mpf_class getY() const{
         return this->y;
     };
 
-    void setY(double _y) {
+    void setY(mpf_class _y) {
         this->y = _y;
     };
     mpf_class geta() const{

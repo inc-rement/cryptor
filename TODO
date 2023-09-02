@@ -12,8 +12,14 @@ V	make formula label
 V	value grid
 	make tangent line & point led
 	okrugleniye i pogreshnost`
+	get & set func
+
 
 prostor
+
+http://web.archive.org/web/20110305072539/http://maths.paisley.ac.uk/allanm/ECRNT/Ecrnt.htm
+
+
 
 
 https://www.nantenaina.xyz/posts/basic-implementation-of-an-elliptic-curve-in-cpp/
