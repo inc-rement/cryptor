@@ -85,8 +85,8 @@ mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
 
 t.setY(g);
-y1=t.getY();
-x1=t.getX();
+//y1=t.getY();
+//x1=t.getX();
 //t.setY((double)y1);
 //if(x1>0)m=sqrt((pow(x1,2)))-2-5;
 //double y1 = (pow(x1,3));//pow(x1,3)-25*x1));
@@ -98,7 +98,7 @@ x1=t.getX();
 
 mpf_class X, Y;
 X=((x*10)+500);
-Y=500-(m*(x-x1)+y1)*10;
+Y=500-(m*(x-t.getX())+t.getY())*10;
 
 Line tangent(1,1);
 XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
@@ -107,10 +107,10 @@ XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 ///XDrawArc(d, w, DefaultGC(d, s), t.getX()*10+497, 497-t.getY()*10, 5, 5, 0, 360 * 64);
 
 mpf_pow_ui(c.get_mpf_t(), m.get_mpf_t(), 2);
-c=c-2*x1;
+c=c-2*t.getX();
 x3=c;
 
-y3=(m*(x1-x3)-y1);
+y3=(m*(t.getX()-x3)-t.getY());
 
 p.setX(x3);
 p.setY(y3);
