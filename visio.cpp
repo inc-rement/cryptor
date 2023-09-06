@@ -104,7 +104,7 @@ Line tangent(1,1);
 XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 
-///XDrawArc(d, w, DefaultGC(d, s), t.getX()*10+497, 497-t.getY()*10, 5, 5, 0, 360 * 64);
+XDrawArc(d, w, DefaultGC(d, s), t.getX().get_d()*10+497, 497-t.getY().get_d()*10, 5, 5, 0, 360 * 64);
 
 mpf_pow_ui(c.get_mpf_t(), m.get_mpf_t(), 2);
 c=c-2*t.getX();
@@ -114,12 +114,10 @@ y3=(m*(t.getX()-x3)-t.getY());
 
 p.setX(x3);
 p.setY(y3);
-///m1.seta(123456789.987654321);
-///m1.setb(987654321.123456789);
 
 //if(x1>0)x3=((pow(m,2))+x1-x1);
 
-///XDrawArc(d, w, DefaultGC(d, s), 497+x3*10, 497-y3*10, 5, 5, 0, 360 * 64);
+XDrawArc(d, w, DefaultGC(d, s), 497+p.getX().get_d()*10, 497-p.getY().get_d()*10, 5, 5, 0, 360 * 64);
 
 XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, 500-(sqrt(pow(x.get_d(),3)-25*x.get_d()))*10);
 XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, (sqrt(pow(x.get_d(),3)-25*x.get_d())*10)+500);
