@@ -38,7 +38,7 @@ Point t;
 Point m1;
 mpf_class c,g;
 mpf_class y1;
-mpf_class x3, y3;
+mpf_class x3, y3, x4, y4;
 mpf_class m=0;
 mpf_class x1;// = 1;
 bool f;
@@ -74,7 +74,7 @@ bool f;
 mpf_pow_ui(c.get_mpf_t(), t.getX().get_mpf_t(), 2);
 mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
 
-m=g-5+2;
+m=t.getX()-5+2;
 //m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
 
@@ -143,6 +143,27 @@ XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, (sqrt(pow(x.get_d(),3)-25*
 if(f){
 std::cout<<"---------"<<std::endl;
 //std::cout<<m<<std::endl;
+
+m=p.getX()-5+2;
+//m=sqrt(pow(t.getX(),2))-5+3;
+m=m*m;
+mpf_pow_ui(c.get_mpf_t(), m.get_mpf_t(), 2);
+
+c=c-2*p.getX();
+x4=c;
+
+y4=(m*(p.getX()-x4)-p.getY());
+
+p.setX(x4);
+p.setY(y4);
+
+
+
+
+
+
+
+
 
 std::cout<<p.getY()<<std::endl;
 
