@@ -67,7 +67,7 @@ bool f;
 	t.setX(x1);
 	XClearWindow(d, w);
 	 }
-	 for(mpf_class x =-5.45;x<11.64;x+=0.01){
+	 for(mpf_class x =-5.45;x<26.64;x+=0.01){
 // double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
 ///t.seta(t.getX());
@@ -119,15 +119,17 @@ p.setY(y3);
 
 XDrawArc(d, w, DefaultGC(d, s), 497+p.getX().get_d()*10, 497-p.getY().get_d()*10, 5, 5, 0, 360 * 64);
 
-XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, 500-(sqrt(pow(x.get_d(),3)-25*x.get_d()))*10);
-XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, (sqrt(pow(x.get_d(),3)-25*x.get_d())*10)+500);
+///XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, 500-(sqrt(pow(x.get_d(),3)-25*x.get_d()))*10);
+///XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*10)+500, (sqrt(pow(x.get_d(),3)-25*x.get_d())*10)+500);
 ////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x))*10);
 ////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt(pow(x,3)*1/3+pow(x,2)*1/2+1/6*x)*10)+500);
 
 
 
-////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt((((x)*(x+1))*(2*x+1))/6)*10));
-////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, (sqrt((((x)*(x+1))*(2*x+1))/6)*10)+500);
+XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*5)+500, 500-(sqrt((((x.get_d())*(x.get_d()+1))*(2*x.get_d()+1))/6)*5));
+XDrawPoint(d, w ,DefaultGC(d, s), (x.get_d()*5)+500, (sqrt((((x.get_d())*(x.get_d()+1))*(2*x.get_d()+1))/6)*5)+500);
+
+XDrawPoint(d, w, DefaultGC(d, s), (x.get_d()*5)+500, 500-(x.get_d()*3-2)*5);
 
 
 ////XDrawPoint(d, w ,DefaultGC(d, s), (x*10)+500, 500-(sqrt(pow(x,3)+pow(x,2)*3/2+1/2*x))*10);
