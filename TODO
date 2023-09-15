@@ -15,7 +15,7 @@ V	value grid
 	get & set func
 	p point
 	make line by two points
-	fix_labels & do not push
+	fix labels & do not merge
 
 
 
