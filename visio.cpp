@@ -55,10 +55,10 @@ bool f;
          XDrawLine(d, w, DefaultGC(d, s), 0, 500, 1000, 500);
          XDrawString(d, w, DefaultGC(d, s), 950, 490, "X", strlen("X"));
          XDrawString(d, w, DefaultGC(d, s), 450, 50, "Y", strlen("Y"));
-	for(int i=10;i<120;i+=10)
+	for(int i=10;i<120;i+=5)
 	XDrawLine(d, w, DefaultGC(d, s), 440+i, 510, 440+i, 490);
-        XDrawString(d, w, DefaultGC(d, s), 440, 480, "-5", strlen("-5"));
-        XDrawString(d, w, DefaultGC(d, s), 550, 480, "5", strlen("5"));
+        XDrawString(d, w, DefaultGC(d, s), 440, 480, "-10", strlen("-10"));
+        XDrawString(d, w, DefaultGC(d, s), 550, 480, "10", strlen("10"));
 	XDrawString(d, w, DefaultGC(d, s), 400, 200, "y^2=x^3-25x", strlen("y^2=x^3-25x"));
 
 	 if(f){
@@ -101,8 +101,8 @@ X=((x*10)+500);
 Y=500-(m*(x-t.getX())+t.getY())*10;
 
 Line tangent(1,1);
-XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
-XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
+//XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
+//XDrawPoint(d, w, DefaultGC(d, s), X.get_d(), Y.get_d());
 
 XDrawArc(d, w, DefaultGC(d, s), t.getX().get_d()*10+497, 497-t.getY().get_d()*10, 5, 5, 0, 360 * 64);
 
