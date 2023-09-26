@@ -51,3 +51,7 @@ end = time.time()
 print("The time of execution of above program is :",
         (end-start) * 10**3, "ms")
 
+
+P= [0 ,1]
+a= math.fmod(1, 10403)
+print(mult_2(math.factorial(7) , P ))
