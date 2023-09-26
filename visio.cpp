@@ -59,7 +59,7 @@ bool f;
 	XDrawLine(d, w, DefaultGC(d, s), 440+i, 510, 440+i, 490);
         XDrawString(d, w, DefaultGC(d, s), 440, 480, "-10", strlen("-10"));
         XDrawString(d, w, DefaultGC(d, s), 550, 480, "10", strlen("10"));
-	XDrawString(d, w, DefaultGC(d, s), 400, 200, "y^2=x^3-25x", strlen("y^2=x^3-25x"));
+	XDrawString(d, w, DefaultGC(d, s), 400, 200, "y^2=(x(x+1)(2x+1))/6", strlen("y^2=(x(x+1)(2x+1))/6"));
 
 	 if(f){
 	 std::cout<<"input x: "<<std::endl;
