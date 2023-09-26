@@ -1,3 +1,5 @@
+import math
+
 def g_l_l ( P, Q, a ):
     if P[2] != 1:
         if P [1]==1:
@@ -12,12 +14,12 @@ def g_l_l ( P, Q, a ):
     if (P[0] == Q [0]) and (P[1] == Q [1]):
         if P [1]<0 :
             return [0 ,0,P [1]]
-        m = (3*P [0]^2+ a )/2/ P[1]
+        m = (3*P [0]**2+ a )/2/ P[1]
     else :
         if (Q[0] -P [0])<0:
             return [0 ,0,Q[0] -P [0]]
         m = (Q[1] -P [1])/( Q[0] -P [0])
-    x3 = m^2-P[0] -Q[0]
+    x3 = m**2-P[0] -Q[0]
     return [x3 ,m*(P[0] - x3)-P[1] ,1]
 
 def mult_2_l (n,P,a):
@@ -30,14 +32,13 @@ def mult_2_l (n,P,a):
         pow_2P = g_l_l ( pow_2P , pow_2P , a )
     return result
 
-print(g_l_l ([9696 , 506 ,1] ,[7878 , 10200 ,1] ,1))
+#print(g_l_l ([9696 , 506 ,1] ,[7878 , 10200 ,1] ,1))
 
 
-def is_rime(n):
+def is_prime(n):
     for i in range(2,int(n**0.5)+1):
         if n%i==0:
             return False
-        
     return True
 
 
@@ -52,7 +53,7 @@ def lenstra (n, bound_a , bound_b ):
         return 3
     for a in range ( bound_a ):
         # Consider only elliptic curves
-        if math.fmod(4* a^3+27 , n )==0:
+        if math.fmod(4* a**3+27 , n )==0:
             continue
         f_point = [math.fmod(0,n),math.fmod (1,n) ,1]
         for b in range ( bound_b ):
@@ -63,7 +64,7 @@ def lenstra (n, bound_a , bound_b ):
             if f_point [2] >1:
                 print(a,b)
                 return math.gcd ( f_point [2] , n)
-    printi('Increase the values of bound_a and bound_b')
+    print('Increase the values of bound_a and bound_b')
 
 print (lenstra (1333333333333333333333 ,200 ,100))
 print (lenstra ( (10^8+7)*(9*10^8+11) ,200 ,100))
