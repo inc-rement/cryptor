@@ -3,6 +3,7 @@ import time
 
 
 def g_l (P, Q):
+    print(P, Q)
     if P == '0':
         return Q
     if Q == '0':
@@ -39,19 +40,19 @@ b = math.fmod(5 ,5)
 P=[2,1]
 
 start = time.time()
-(print(easy_mult(10^6,P)))
+(print(easy_mult(10**6,P)))
 end = time.time()
 print("The time of execution of above program is :",
         (end-start) * 10**3, "ms")
 
 
 start = time.time()
-(print(mult_2(10^6, P)))
+(print(mult_2(10**6, P)))
 end = time.time()
 print("The time of execution of above program is :",
         (end-start) * 10**3, "ms")
 
 
-P= [0 ,1]
+P= [5 ,17]
 a= math.fmod(1, 10403)
 print(mult_2(math.factorial(7) , P ))
