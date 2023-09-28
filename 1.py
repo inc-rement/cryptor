@@ -39,7 +39,7 @@ def mult_2 (n,P):
 #P = E ([2 ,1])
 #a = math.fmod( -6 ,5)
 #b = math.fmod(5 ,5)
-#P=[2,1]
+#P=[1,1]
 
 #start = time.time()
 #(print(easy_mult(10**6,P)))
@@ -56,5 +56,5 @@ def mult_2 (n,P):
 
 
 P= [1 ,1]
-#a= math.fmod(1, 10403)
-print(easy_mult(2 , P ))
+a= math.fmod(1, 10403)
+print(math.gcd(int((easy_mult(2 , P ))[0]),16))
