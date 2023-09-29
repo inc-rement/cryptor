@@ -36,6 +36,14 @@ def mult_2 (n,P):
         pow_2P = g_l ( pow_2P , pow_2P )
     return result
 
+def is_prime(n):
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            return False
+    return True
+
+
+
 P= [1 ,1]
 a= math.fmod(1, 10403)
 n=int(sys.argv[1])
@@ -44,7 +52,10 @@ while True:
     c=math.gcd(int((easy_mult(i , P ))[0]),n)
     i+=1
     if c>1:
-        print(c, int(n/c))
-        break
-
+        if is_prime(c):
+            print(c)
+            n=int(n/c)
+            if is_prime(n):
+                print(n)
+                break
 
