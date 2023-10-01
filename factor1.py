@@ -12,27 +12,27 @@ def g_l (P, Q):
     if (P[0] == Q[0]) and (P[1] == -Q[1]):
         return 0
     if (P[0] == Q[0]) and (P[1] == Q[1]):
-        m = ((P[0]**2+3+2))%n
+        m = ((3*P[0]**2+5)/2*P[1])%n
         print(m) 
     else:
         m = ((Q[1]-P[1]))/((Q[0]-P[0]))
-        #print(m)
+        print(m)
     x3 = (m**2-P[0]-Q[0])%n
     return [x3 ,(m*(P[0] - x3)-P[1])%n]
 
-def easy_mult(n,P):
-    result = 0 
-    for i in range (n):
+def easy_mult(n1,P):
+    result = [0, 0]
+    for i in range (n1):
         result = g_l(P, result)
     return result
 
-def mult_2 (n,P):
+def mult_2 (n1,P):
     result = '0'
     pow_2P = P
-    while n !=0:
-        if (n %2)==1:
+    while n1 !=0:
+        if (n1 %2)==1:
             result = g_l ( pow_2P , result )
-        n //=2
+        n1 //=2
         pow_2P = g_l ( pow_2P , pow_2P )
     return result
 
@@ -43,16 +43,20 @@ def is_prime(n):
     return True
 
 def check(L):
-    print((L[1]**2)%n==(L[0]**3+3*L[0]+4)%n)
+    return ((L[1]**2)==(L[0]**3-5*L[0]))
+    #print(L[0]**3-5*L[0])
+
+for i in range(100):
+    for j in range(100):
+        if check([i,j]):
+            print([i,j])
 
 
 
-
-
-P=[2,2]
-p=5
-q=7
-n=7
+P=[1,2]
+p=3
+q=5
+n=15
 e=5
 d=29
 
@@ -61,9 +65,10 @@ b=8
 
 #(check(P))
 #print(P)
-F=g_l(P, P)
-check(F)
-print(F)
-#G=easy_mult(d , F )
+#F=g_l(P, [0,0])
+#check(F)
+#print(F)
+#G=easy_mult(1, P)
+#check(G)
 #print(G)
 
