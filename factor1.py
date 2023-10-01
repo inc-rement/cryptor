@@ -12,7 +12,7 @@ def g_l (P, Q):
     if (P[0] == Q[0]) and (P[1] == -Q[1]):
         return 0
     if (P[0] == Q[0]) and (P[1] == Q[1]):
-        m = ((3*P[0]**2+5)/2*P[1])%n
+        m = ((P[0]**2+5+2))%n
         #print(m) 
     else:
         m = ((Q[1]-P[1]))/((Q[0]-P[0]))
@@ -21,7 +21,7 @@ def g_l (P, Q):
     return [x3 ,(m*(P[0] - x3)-P[1])%n]
 
 def easy_mult(n1,P):
-    result = [0, 0]
+    result = 0 
     for i in range (n1):
         result = g_l(P, result)
     return result
@@ -60,10 +60,10 @@ b=8
 
 #(check(P))
 #print(P)
-F=g_l(P, [0,0])
+F=g_l(P, P)
 check(F)
-#print(F)
-#G=easy_mult(1, P)
-#check(G)
-#print(G)
+print(F)
+G=g_l(F, P)
+check(G)
+print(G)
 
