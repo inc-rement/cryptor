@@ -22,3 +22,8 @@ for i in range(5000):
 x1=(m**2-2)%4453
 y1=(-m*(x1-1)-3)%4453
 print('2P = ', x1, y1)
+
+for i in range(5000):
+    if((i*6)%4453)==1:
+        print(i)
+
