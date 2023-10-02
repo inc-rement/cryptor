@@ -2,9 +2,13 @@
 import math
 import time
 import sys 
+import pdb
+from secp256r1_python import Curve
+
 
 def g_l (P, Q):
     #print(P, Q)
+    #pdb.set_trace()
     if P == 0:
         return Q
     if Q == 0:
@@ -12,13 +16,13 @@ def g_l (P, Q):
     if (P[0] == Q[0]) and (P[1] == -Q[1]):
         return 0
     if (P[0] == Q[0]) and (P[1] == Q[1]):
-        m = ((P[0]**2+5+2))%n
-        #print(m) 
+        m = ((3*P[0]**2)/(2*P[1]))
+        print(m) 
     else:
         m = ((Q[1]-P[1]))/((Q[0]-P[0]))
         #print(m)
-    x3 = (m**2-P[0]-Q[0])%n
-    return [x3 ,(m*(P[0] - x3)-P[1])%n]
+    x3 = (m**2-P[0]-Q[0])
+    return [x3 ,(m*(P[0] - x3)-P[1])]
 
 def easy_mult(n1,P):
     result = 0 
@@ -43,27 +47,30 @@ def is_prime(n):
     return True
 
 def check(L):
-    print((L[1]**2)%n==(L[0]**3-5*L[0])%n)
+    print((L[1]**2)==(L[0]**3+8))
     #print(L[0]**3-5*L[0])
 
 
 
-P=[5,10]
-p=3
-q=5
-n=15
+P=[1,3]
+p=11
+q=13
+n=143
 e=5
 d=29
 
 b=8
 
 
-#(check(P))
-#print(P)
-F=g_l(P, P)
+check(P)
+print(P)
+F=easy_mult(2, P)
 check(F)
 print(F)
-G=g_l(F, P)
-check(G)
-print(G)
+#G=g_l([-1,2], P)
+#check(G)
+#print(G)
+curve=Curve()
+curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
+
 
