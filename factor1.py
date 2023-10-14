@@ -55,8 +55,8 @@ def check(L):
 
 P=[1,3]
 p=11
-q=13
-n=143
+q=17
+n=181
 e=5
 d=29
 
@@ -72,38 +72,39 @@ b=8
 #check(G)
 #print(G)
 curve=Curve()
-curve.p=11
-curve.n=143
+curve.p=23
+curve.n=391
 curve.g=([0,0])
 
 #for i in range(10):
 #    for j in range(10):
 #        curve.g=([i,j])
 #        if curve.valid(curve.g):
-            #print(curve.g)
+#            print(curve.g)
 
 
-#curve.g=([1,3])
-#print(curve.g)
-#print(curve.valid(curve.g))
-#curve.g=curve.mul(curve.g, 5)
-#print(curve.g)
-#print(curve.valid(curve.g))
-#print(curve.valid(curve.add(curve.g, curve.inv(curve.g))))
-#print(curve.valid(curve.g))
+curve.g=([2,1])
+print(curve.g)
+print(curve.valid(curve.g))
+eM=curve.mul(curve.g, 5)
+dM=curve.mul(eM, 29)
+print(eM)
+print(curve.valid(eM))
+print(dM)
+print(curve.valid(dM))
 
 
-curve.g=[1 ,3]
-n=int(sys.argv[1])
-i=2
-while True:
-    c=math.gcd(int((curve.mul(curve.g,i))[0]),n)
-    i+=1
-    if c>1:
-        if is_prime(c):
-            print(c)
-            n=int(n/c)
-            if is_prime(n):
-                print(n)
-                break
+#curve.g=[1 ,3]
+#n=int(sys.argv[1])
+#i=2
+#while True:
+#    c=math.gcd(((curve.mul(curve.g,i))[0]),n)
+#    i+=1
+#    if c>1:
+#        if is_prime(c):
+#            print(c)
+#            n=int(n/c)
+#            if is_prime(n):
+#                print(n)
+#                break
 
