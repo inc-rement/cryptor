@@ -3,7 +3,8 @@ import math
 import time
 import sys 
 import pdb
-from secp256r1_python import Curve
+from curve import Curve
+import numpy as np
 
 
 def g_l (P, Q):
@@ -62,15 +63,35 @@ d=29
 b=8
 
 
-check(P)
-print(P)
-F=easy_mult(2, P)
-check(F)
-print(F)
+#check(P)
+#print(P)
+#F=easy_mult(2, P)
+#check(F)
+#print(F)
 #G=g_l([-1,2], P)
 #check(G)
 #print(G)
 curve=Curve()
-curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
+curve.p=11
+curve.n=143
+curve.g=([0,0])
 
+#for i in range(10):
+#    for j in range(10):
+#        curve.g=([i,j])
+#        if curve.valid(curve.g):
+            #print(curve.g)
+
+
+curve.g=([1,3])
+#curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
+#print(curve.valid(curve.g))
+#curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
+print(curve.g)
+print(curve.valid(curve.g))
+curve.g=curve.mul(curve.g, 5)
+print(curve.g)
+print(curve.valid(curve.g))
+#print(curve.valid(curve.add(curve.g, curve.inv(curve.g))))
+#print(curve.valid(curve.g))
 
