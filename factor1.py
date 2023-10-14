@@ -83,15 +83,27 @@ curve.g=([0,0])
             #print(curve.g)
 
 
-curve.g=([1,3])
-#curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
+#curve.g=([1,3])
+#print(curve.g)
 #print(curve.valid(curve.g))
-#curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
-print(curve.g)
-print(curve.valid(curve.g))
-curve.g=curve.mul(curve.g, 5)
-print(curve.g)
-print(curve.valid(curve.g))
+#curve.g=curve.mul(curve.g, 5)
+#print(curve.g)
+#print(curve.valid(curve.g))
 #print(curve.valid(curve.add(curve.g, curve.inv(curve.g))))
 #print(curve.valid(curve.g))
+
+
+curve.g=[1 ,3]
+n=int(sys.argv[1])
+i=2
+while True:
+    c=math.gcd(int((curve.mul(curve.g,i))[0]),n)
+    i+=1
+    if c>1:
+        if is_prime(c):
+            print(c)
+            n=int(n/c)
+            if is_prime(n):
+                print(n)
+                break
 
