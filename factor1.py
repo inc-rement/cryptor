@@ -86,15 +86,22 @@ curve.g=([0,0])
 #            print(curve.g)
 
 
-curve.g=([9,3])
-print("message: ",chr(curve.g[0]+60))
+xP=input("input num: ")
+xP=int(xP)
+yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+
+#print(yP)
+
+
+
+curve.g=([xP,int(yP)])
+print("mess: ",chr(curve.g[0]+65))
 #print(curve.valid(curve.g))
 eM=curve.mul(curve.g, 5)
 dM=curve.mul(eM, 29)
-print("encrypted: ",chr(eM[0]+60))
+print("enc: ",chr(eM[0]+65))
 #print(curve.valid(eM))
-print("decrypted: ",chr(dM[0]+60))
+print("dec: ",chr(dM[0]+65))
 #print(curve.valid(dM))
 #print("-------------")
-#print(curve.g==dM)
 
