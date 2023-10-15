@@ -72,6 +72,9 @@ b=8
 #check(G)
 #print(G)
 curve=Curve()
+print(curve.n/curve.p)
+
+
 curve.p=23
 curve.n=391
 curve.g=([0,0])
@@ -92,19 +95,6 @@ print(eM)
 print(curve.valid(eM))
 print(dM)
 print(curve.valid(dM))
-
-
-#curve.g=[1 ,3]
-#n=int(sys.argv[1])
-#i=2
-#while True:
-#    c=math.gcd(((curve.mul(curve.g,i))[0]),n)
-#    i+=1
-#    if c>1:
-#        if is_prime(c):
-#            print(c)
-#            n=int(n/c)
-#            if is_prime(n):
-#                print(n)
-#                break
+print("-------------")
+print(curve.g==dM)
 
