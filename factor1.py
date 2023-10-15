@@ -86,20 +86,20 @@ curve.g=([0,0])
 #            print(curve.g)
 
 
-xPs=input("input string: ")
+xPs=sys.argv[1]
 s=len(xPs)
+crypt=''
 for j in range(s):
     xP=ord(xPs[j])-64
     yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
-
 #print(xP)
-
     curve.g=([xP,int(yP)])
     #print("mess: ",chr(curve.g[0]+64))
 #print(curve.valid(curve.g))
     eM=curve.mul(curve.g, 5)
     #dM=curve.mul(eM, 29)
-    print(chr(eM[0]+64))
+    crypt=crypt+chr(eM[0]+64)
+print(crypt)
 #print(curve.valid(eM))
 #print("dec: ",chr(dM[0]+64))
 #print(curve.valid(dM))
