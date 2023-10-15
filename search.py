@@ -1,5 +1,18 @@
+#!/usr/bin/python
+
 from primePy import primes
-for i in range(1000):
+import math
+for i in range(100):
     if primes.check(i):
-        if i%3==2:
+        if(2==i%3):
             print(i)
+
+print("----------------------")
+for j in range(300):
+    if(1==j%math.lcm(17+1,23+1)):
+        print(j)
+
+
+
+print("----------------------")
+print("n= ", 17*23)
