@@ -72,29 +72,29 @@ b=8
 #check(G)
 #print(G)
 curve=Curve()
-print(curve.n/curve.p)
+#print(curve.n/curve.p)
 
 
 curve.p=23
 curve.n=391
 curve.g=([0,0])
 
-#for i in range(10):
-#    for j in range(10):
+#for i in range(70):
+#    for j in range(70):
 #        curve.g=([i,j])
 #        if curve.valid(curve.g):
 #            print(curve.g)
 
 
-curve.g=([2,1])
-print(curve.g)
-print(curve.valid(curve.g))
+curve.g=([9,3])
+print("message: ",chr(curve.g[0]+60))
+#print(curve.valid(curve.g))
 eM=curve.mul(curve.g, 5)
 dM=curve.mul(eM, 29)
-print(eM)
-print(curve.valid(eM))
-print(dM)
-print(curve.valid(dM))
-print("-------------")
-print(curve.g==dM)
+print("encrypted: ",chr(eM[0]+60))
+#print(curve.valid(eM))
+print("decrypted: ",chr(dM[0]+60))
+#print(curve.valid(dM))
+#print("-------------")
+#print(curve.g==dM)
 
