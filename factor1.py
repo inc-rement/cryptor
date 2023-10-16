@@ -75,8 +75,8 @@ curve=Curve()
 #print(curve.n/curve.p)
 
 
-curve.p=23
-curve.n=391
+curve.p=41
+curve.n=1189
 curve.g=([0,0])
 
 #for i in range(70):
@@ -86,20 +86,23 @@ curve.g=([0,0])
 #            print(curve.g)
 
 
-xPs=sys.argv[1]
-s=len(xPs)
-crypt=''
-for j in range(s):
-    xP=ord(xPs[j])-64
-    yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+#xPs=sys.argv[1]
+#s=len(xPs)
+#crypt=''
+#decrypt=''
+#for j in range(1):
+    #xP=int(xPs[j])
+    #yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
 #print(xP)
-    curve.g=([xP,int(yP)])
+curve.g=([10,19])
     #print("mess: ",chr(curve.g[0]+64))
 #print(curve.valid(curve.g))
-    eM=curve.mul(curve.g, 5)
-    #dM=curve.mul(eM, 29)
-    crypt=crypt+chr(eM[0]+64)
-print(crypt)
+eM=curve.mul(curve.g, 13)
+dM=curve.mul(eM, 97)
+    #crypt=crypt+str(eM[0])
+    #decrypt=decrypt+str(dM[0])
+print(dM)
+#print(decrypt)
 #print(curve.valid(eM))
 #print("dec: ",chr(dM[0]+64))
 #print(curve.valid(dM))
