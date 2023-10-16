@@ -86,15 +86,26 @@ curve.g=([0,0])
 #            print(curve.g)
 
 
-curve.g=([int(sys.argv[1]),int(sys.argv[2])])
-#print("message: ",chr(curve.g[0]+60))
+xPs=sys.argv[1]
+s=len(xPs)
+crypt=''
+crypty=''
+for j in range(s):
+    xP=ord(xPs[j])-64
+    yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+    #print(yP)
+    curve.g=([xP,int(yP)])
+    #print("mess: ",chr(curve.g[0]+64))
 #print(curve.valid(curve.g))
-eM=curve.mul(curve.g, 5)
-#dM=curve.mul(eM, 29)
-print(chr(eM[0]+60),eM[1])
+    eM=curve.mul(curve.g, 5)
+    #dM=curve.mul(eM, 29)
+    crypt=crypt+chr(eM[0]+64)
+    crypty=crypty+chr(eM[1]+64)
+    #decrypt=decrypt+chr(dM[0]+64)
+print(crypt)
+print(crypty)
 #print(curve.valid(eM))
-#print("decrypted: ",chr(dM[0]+60))
+#print("dec: ",chr(dM[0]+64))
 #print(curve.valid(dM))
 #print("-------------")
-#print(curve.g==dM)
 
