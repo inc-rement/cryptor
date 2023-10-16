@@ -92,8 +92,8 @@ yPs=sys.argv[2]
 crypt=''
 decrypt=''
 for j in range(s):
-    xP=ord(xPs[j])-64
-    yP = ord(yPs[j])-64
+    xP=ord(xPs[j])-96
+    yP = ord(yPs[j])-96
     #print(yP)
     curve.g=([xP,(yP)])
     #print("mess: ",chr(curve.g[0]+64))
@@ -101,7 +101,7 @@ for j in range(s):
     #eM=curve.mul(curve.g, 5)
     dM=curve.mul(curve.g, 29)
     #crypt=crypt+chr(eM[0]+64)
-    decrypt=decrypt+chr(dM[0]+64)
+    decrypt=decrypt+chr(dM[0]+96)
 #print(crypt)
 print(decrypt)
 #print(curve.valid(eM))

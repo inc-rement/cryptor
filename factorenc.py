@@ -91,7 +91,7 @@ s=len(xPs)
 crypt=''
 crypty=''
 for j in range(s):
-    xP=ord(xPs[j])-64
+    xP=ord(xPs[j])-96
     yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
     #print(yP)
     curve.g=([xP,int(yP)])
@@ -99,8 +99,8 @@ for j in range(s):
 #print(curve.valid(curve.g))
     eM=curve.mul(curve.g, 5)
     #dM=curve.mul(eM, 29)
-    crypt=crypt+chr(eM[0]+64)
-    crypty=crypty+chr(eM[1]+64)
+    crypt=crypt+chr(eM[0]+96)
+    crypty=crypty+chr(eM[1]+96)
     #decrypt=decrypt+chr(dM[0]+64)
 print(crypt)
 print(crypty)
