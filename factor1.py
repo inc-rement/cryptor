@@ -79,22 +79,22 @@ curve.p=41
 curve.n=1189
 curve.g=([0,0])
 
-#for i in range(70):
-#    for j in range(70):
-#        curve.g=([i,j])
-#        if curve.valid(curve.g):
-#            print(curve.g)
+for i in range(10):
+    for j in range(10):
+        curve.g=([i,j])
+        if curve.valid(curve.g):
+            print(curve.g)
 
 
-#xPs=sys.argv[1]
-#s=len(xPs)
-#crypt=''
-#decrypt=''
+xPs=sys.argv[1]
+s=len(xPs)
+crypt=''
+decrypt=''
 #for j in range(1):
-    #xP=int(xPs[j])
-    #yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
-#print(xP)
-curve.g=([10,19])
+xP=int(xPs[0])
+yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+print(xP, int(yP))
+curve.g=([1,6])
     #print("mess: ",chr(curve.g[0]+64))
 #print(curve.valid(curve.g))
 eM=curve.mul(curve.g, 13)
