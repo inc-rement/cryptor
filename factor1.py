@@ -71,37 +71,48 @@ b=8
 #G=g_l([-1,2], P)
 #check(G)
 #print(G)
+class Table:
+    ASCII = 1
+    Symbol = 2
+    G = 3
+    Point = 4
+
+cry = [Table() for i in range(10)]
+#print(cry[0].ASCII)
+
+
+
 curve=Curve()
 #print(curve.n/curve.p)
 
 
-curve.p=41
-curve.n=1189
+curve.p=29
+curve.n=667
 curve.g=([0,0])
 
 for i in range(10):
-    for j in range(10):
-        curve.g=([i,j])
-        if curve.valid(curve.g):
-            print(curve.g)
+    #for j in range(10):
+        #curve.g=([i,j])
+    xP=i
+    yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+    if yP==int(yP):
+        print(xP, yP)
+        print("on line:", curve.valid([xP, yP]))
 
-
-xPs=sys.argv[1]
-s=len(xPs)
+xPs=1#=sys.argv[1]
+#s=len(xPs)
 crypt=''
 decrypt=''
 #for j in range(1):
-xP=int(xPs[0])
-yP = math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
-print(xP, int(yP))
-curve.g=([1,6])
+#print(xP, yP)
+curve.g=([0, 5])
     #print("mess: ",chr(curve.g[0]+64))
 #print(curve.valid(curve.g))
-eM=curve.mul(curve.g, 13)
-dM=curve.mul(eM, 97)
+eM=curve.mul(curve.g, 19)
+dM=curve.mul(eM, 19)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
-print(dM)
+#print(dM)
 #print(decrypt)
 #print(curve.valid(eM))
 #print("dec: ",chr(dM[0]+64))
