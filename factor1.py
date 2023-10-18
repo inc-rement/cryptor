@@ -90,14 +90,18 @@ curve.p=29
 curve.n=667
 curve.g=([0,0])
 
-for i in range(10):
-    #for j in range(10):
-        #curve.g=([i,j])
-    xP=i
+xP=0
+j=0
+
+while True:
+    xP=xP+1
     yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
     if yP==int(yP):
+        j=j+1
         print(xP, yP)
         print("on line:", curve.valid([xP, yP]))
+    if j>99: 
+        break
 
 xPs=1#=sys.argv[1]
 #s=len(xPs)
