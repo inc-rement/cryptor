@@ -3,7 +3,7 @@ import math
 import time
 import sys 
 import pdb
-from curve import Curve
+from curve_ import Curve
 import numpy as np
 
 
@@ -84,24 +84,24 @@ cry = [Table() for i in range(10)]
 
 curve=Curve()
 #print(curve.n/curve.p)
+curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
 
-
-curve.p=29
-curve.n=667
-curve.g=([0,0])
+#curve.p=29
+#curve.n=667
+#curve.g=([0,0])
 
 xP=0
 j=0
 
-while True:
-    xP=xP+1
-    yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
-    if yP==int(yP):
-        j=j+1
-        print(xP, yP)
-        print("on line:", curve.valid([xP, yP]))
-    if j>99: 
-        break
+#while True:
+#    xP=xP+1
+#    yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+#    if yP==int(yP):
+#        j=j+1
+#        print(xP, yP)
+#        print("on line:", curve.valid([xP, yP]))
+#    if j>99: 
+#        break
 
 xPs=1#=sys.argv[1]
 #s=len(xPs)
@@ -109,17 +109,17 @@ crypt=''
 decrypt=''
 #for j in range(1):
 #print(xP, yP)
-curve.g=([0, 5])
+#curve.g=([0, 5])
     #print("mess: ",chr(curve.g[0]+64))
 #print(curve.valid(curve.g))
-eM=curve.mul(curve.g, 19)
-dM=curve.mul(eM, 19)
+#eM=curve.mul(curve.g, 19)
+#dM=curve.mul(eM, 19)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
 #print(dM)
 #print(decrypt)
 #print(curve.valid(eM))
 #print("dec: ",chr(dM[0]+64))
-#print(curve.valid(dM))
+print(curve.valid(curve.g))
 #print("-------------")
 
