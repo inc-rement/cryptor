@@ -108,7 +108,7 @@ while True:
         l=0
         h=0
         while True:
-            x = curve.g[0]*30+l
+            x = curve.g[0]*50+l
             y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
             if math.sqrt(y)==int(math.sqrt(y)):
                 g=False
@@ -120,10 +120,10 @@ while True:
                 if g==False:
                     arr.append(l)
             l=l+1
-            if h > 7:
+            if h > 10:
                 break
         print(curve.valid([x,math.sqrt(y)]))
-        print(x/30)
+        print(x/50)
         print (arr)
     if j>100: 
         break
