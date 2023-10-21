@@ -92,16 +92,41 @@ curve.g=([0,0])
 
 xP=0
 j=0
-
-#while True:
-#    xP=xP+1
-#    yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
-#    if yP==int(yP):
-#        j=j+1
-#        print(xP, yP)
-#        print("on line:", curve.valid([xP, yP]))
-#    if j>9: 
-#        break
+arr=[]
+while True:
+    xP=xP+1
+    yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
+    if yP==int(yP):
+        print("-------------")
+        j=j+1
+        print(xP, yP)
+        print("on line:", curve.valid([xP, yP]))
+        curve.g=([xP,yP])
+    #print("mess: ",chr(curve.g[0]+64))
+        print(curve.g)
+        x=0
+        l=0
+        h=0
+        while True:
+            x = curve.g[0]*30+l
+            y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+            if math.sqrt(y)==int(math.sqrt(y)):
+                g=False
+                print (l)
+                h=h+1
+                for d in arr:
+                    if d==l:
+                        g=True
+                if g==False:
+                    arr.append(l)
+            l=l+1
+            if h > 7:
+                break
+        print(curve.valid([x,math.sqrt(y)]))
+        print(x/30)
+        print (arr)
+    if j>100: 
+        break
 
 xPs=1#=sys.argv[1]
 #s=len(xPs)
@@ -109,21 +134,26 @@ crypt=''
 decrypt=''
 #for j in range(1):
 #print(xP, yP)
-curve.g=([4, 3])
+##curve.g=([4, 3])
     #print("mess: ",chr(curve.g[0]+64))
-print(curve.g)
-x=0
-l=0
-while True:
-    x = curve.g[0]*30+l
-    y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
-    if math.sqrt(y)==int(math.sqrt(y)):
-        print (l)
-        break
-    l=l+1
+##print(curve.g)
+##x=0
+##l=0
+##h=0
+##while True:
+##    x = curve.g[0]*30+l
+##    y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+##    if math.sqrt(y)==int(math.sqrt(y)):
+##        print (l)
+##        h=h+1
+        #break
+##    l=l+1
+##    if h > 2:
+##        break
 
-print(curve.valid([x,math.sqrt(y)]))
-print(x/30)
+
+#print(curve.valid([x,math.sqrt(y)]))
+##print(x/30)
 
 
 ##eM=curve.mul(curve.g, 19)
