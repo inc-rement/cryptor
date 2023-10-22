@@ -122,7 +122,7 @@ while True:
                         g=True
                 if g==False:
                     #arr[l]=curve.g[0]
-                    r=[l,x]
+                    r=[l,x%50]
                     arr.append(r)
             l=l+1
             if h > 15:
@@ -137,13 +137,13 @@ while True:
 
 
 arr.sort()
-#print(arr)
+print(arr)
 
 for i in arr:
     for j in arr:
         if i[1]==j[1]:
             if arr.index(i)!=arr.index(j):
-                print("matching: ", i)
+                print("matching: ", i, j)
 
 
 
