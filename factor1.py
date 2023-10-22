@@ -122,7 +122,7 @@ while True:
                         g=True
                 if g==False:
                     #arr[l]=curve.g[0]
-                    r=[l,x]
+                    r=[l, x,curve.g[1]]
                     arr.append(r)
             l=l+1
             if h > 15:
@@ -154,9 +154,9 @@ crypt=''
 decrypt=''
 #for j in range(1):
 #print(xP, yP)
-##curve.g=([4, 3])
+curve.g=([int(arr[4][1]), int(arr[4][2])])
     #print("mess: ",chr(curve.g[0]+64))
-##print(curve.g)
+print(curve.valid(curve.g))
 ##x=0
 ##l=0
 ##h=0
@@ -172,17 +172,17 @@ decrypt=''
 ##        break
 
 
-#print(curve.valid([x,math.sqrt(y)]))
+#print(curve.valid(curve.g))
 ##print(x/30)
 
 
-##eM=curve.mul(curve.g, 19)
-##dM=curve.mul(eM, 19)
+eM=curve.mul(curve.g, 19)
+dM=curve.mul(eM, 19)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
-##print(dM)
+print(dM)
 #print(decrypt)
-#print(curve.valid(eM))
+print(curve.valid(dM))
 #print("dec: ",chr(dM[0]+64))
 #print(curve.valid(curve.g))
 #print("-------------")
