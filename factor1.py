@@ -93,6 +93,9 @@ curve.g=([0,0])
 xP=0
 j=0
 arr=[]
+#for u in range(51):
+#    arr.append(0)
+
 while True:
     xP=xP+1
     yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
@@ -115,19 +118,26 @@ while True:
                 print (l)
                 h=h+1
                 for d in arr:
-                    if d==l:
+                    if d[0]==l:
                         g=True
                 if g==False:
-                    arr.append(l)
+                    #arr[l]=curve.g[0]
+                    r=([l,curve.g[0]])
+                    arr.append(r)
             l=l+1
-            if h > 10:
+            if h > 15:
                 break
-        print(curve.valid([x,math.sqrt(y)]))
-        print(x/50)
-        print (arr)
-    if j>100: 
+        #print(curve.valid([x,math.sqrt(y)]))
+        #print(x/50)
+        #print (arr)
+    if j>10: 
         break
 
+
+
+
+arr.sort()
+print (arr)
 xPs=1#=sys.argv[1]
 #s=len(xPs)
 crypt=''
