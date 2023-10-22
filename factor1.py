@@ -122,7 +122,7 @@ while True:
                         g=True
                 if g==False:
                     #arr[l]=curve.g[0]
-                    r=([l,curve.g[0]])
+                    r=([l,x])
                     arr.append(r)
             l=l+1
             if h > 15:
