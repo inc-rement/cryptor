@@ -125,7 +125,7 @@ while True:
                     r=[l, x,curve.g[1]]
                     arr.append(r)
             l=l+1
-            if h > 15:
+            if h > 50:
                 break
         #print(curve.valid([x,math.sqrt(y)]))
         #print(x/50)
@@ -154,9 +154,14 @@ crypt=''
 decrypt=''
 #for j in range(1):
 #print(xP, yP)
-curve.g=([int(arr[4][1]), int(arr[4][2])])
+t=0
+for i in arr:
+    curve.g=([int(i[1]), int(i[2])])
     #print("mess: ",chr(curve.g[0]+64))
-print(curve.valid(curve.g))
+    if curve.valid(curve.g)==True:
+        print(curve.valid(curve.g))
+        t=t+1
+print(t)
 ##x=0
 ##l=0
 ##h=0
