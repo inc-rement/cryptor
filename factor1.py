@@ -125,6 +125,7 @@ while True:
                     r=[l, x, curve.g[0]]
                     arr.append(r)
             l=l+1
+
             if h > 10:
                 break
         #print(curve.valid([x,math.sqrt(y)]))
@@ -178,23 +179,26 @@ for i in arr:
 ##    if h > 2:
 ##        break
 
+x = bi("hg") 
+y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
 
-#print(curve.valid(curve.g))
-##print(x/30)
+curve.g=(x,int(math.sqrt(y)))
+print(curve.valid(curve.g))
+print(curve.g)
 
 
-        #eM=curve.mul(curve.g, 19)
-        #dM=curve.mul(eM, 19)
+eM=curve.mul(curve.g, 19)
+dM=curve.mul(eM, 19)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
-        #print(dM)
+print(dM)
 #print(decrypt)
         #print(curve.valid(dM))
 #print("dec: ",chr(dM[0]+64))
 #print(curve.valid(curve.g))
 #print("-------------")
 
-print(ib(bi("hg")))
+print(ib(curve.g[0]))
 
 
 
