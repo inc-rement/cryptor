@@ -5,7 +5,7 @@ import sys
 import pdb
 from curve import Curve
 import numpy as np
-
+from curve import bi, ib
 
 def g_l (P, Q):
     #print(P, Q)
@@ -88,7 +88,7 @@ curve=Curve()
 
 curve.p=29
 curve.n=667
-curve.g=([0,0])
+#print(curve.g)
 
 xP=0
 j=0
@@ -100,13 +100,13 @@ while True:
     xP=xP+1
     yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
     if yP==int(yP):
-        print("-------------")
+        #print("-------------")
         j=j+1
-        print(xP, yP)
-        print("on line:", curve.valid([xP, yP]))
+        ##print(xP, yP)
+        ##print("on line:", curve.valid([xP, yP]))
         curve.g=([xP,yP])
     #print("mess: ",chr(curve.g[0]+64))
-        print(curve.g)
+        ##print(curve.g)
         x=0
         l=0
         h=0
@@ -115,17 +115,17 @@ while True:
             y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
             if math.sqrt(y)==int(math.sqrt(y)):
                 g=False
-                print (l)
+                #print (l)
                 h=h+1
                 for d in arr:
                     if d[0]==l:
                         g=True
                 if g==False:
                     #arr[l]=curve.g[0]
-                    r=[l, x,curve.g[1]]
+                    r=[l, x, curve.g[0]]
                     arr.append(r)
             l=l+1
-            if h > 50:
+            if h > 10:
                 break
         #print(curve.valid([x,math.sqrt(y)]))
         #print(x/50)
@@ -136,14 +136,14 @@ while True:
 
 
 
-arr.sort()
-print(arr)
+#arr.sort()
+#print(arr)
 
-for i in arr:
-    for j in arr:
-        if i[1]==j[1]:
-            if arr.index(i)!=arr.index(j):
-                print("matching: ", i, j)
+#for i in arr:
+#    for j in arr:
+#        if i[2]==j[2]:
+#            if arr.index(i)!=arr.index(j):
+#                print("matching: ", i, j)
 
 
 
@@ -156,12 +156,14 @@ decrypt=''
 #print(xP, yP)
 t=0
 for i in arr:
-    curve.g=([int(i[1]), int(i[2])])
+    curve.g=([(i[1]), (i[2])])
     #print("mess: ",chr(curve.g[0]+64))
     if curve.valid(curve.g)==True:
-        print(curve.valid(curve.g))
+        #print(curve.valid(curve.g))
+        #print(curve.g)
         t=t+1
-print(t)
+
+#print(t)
 ##x=0
 ##l=0
 ##h=0
@@ -181,14 +183,18 @@ print(t)
 ##print(x/30)
 
 
-eM=curve.mul(curve.g, 19)
-dM=curve.mul(eM, 19)
+        #eM=curve.mul(curve.g, 19)
+        #dM=curve.mul(eM, 19)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
-print(dM)
+        #print(dM)
 #print(decrypt)
-print(curve.valid(dM))
+        #print(curve.valid(dM))
 #print("dec: ",chr(dM[0]+64))
 #print(curve.valid(curve.g))
 #print("-------------")
+
+print(ib(bi("hg")))
+
+
 
