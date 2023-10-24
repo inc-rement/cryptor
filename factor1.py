@@ -86,8 +86,8 @@ curve=Curve()
 #print(curve.n/curve.p)
 #curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
 
-curve.p=29
-curve.n=667
+curve.p=113
+curve.n=12091
 #print(curve.g)
 
 xP=0
@@ -100,10 +100,10 @@ while True:
     xP=xP+1
     yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
     if yP==int(yP):
-        #print("-------------")
+        print("-------------")
         j=j+1
-        ##print(xP, yP)
-        ##print("on line:", curve.valid([xP, yP]))
+        print(xP, yP)
+        print("on line:", curve.valid([xP, yP]))
         curve.g=([xP,yP])
     #print("mess: ",chr(curve.g[0]+64))
         ##print(curve.g)
@@ -182,7 +182,7 @@ for i in arr:
 
 M=4+96
 print(chr(M))
-x = bi(chr(M-96)) 
+x = 8 
 y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
 
 curve.g=(x,int(math.sqrt(y)))
@@ -190,8 +190,8 @@ print(curve.valid(curve.g))
 print(curve.g)
 
 
-eM=curve.mul(curve.g, 19)
-dM=curve.mul(eM, 19)
+eM=curve.mul(curve.g, 47)
+dM=curve.mul(eM, 131)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
 print(dM)

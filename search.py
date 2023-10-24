@@ -8,11 +8,11 @@ for i in range(128):
             print(i)
 
 print("----------------------")
-for j in range(3000):
-    if(1==j%math.lcm(29+1,41+1)):
+for j in range(10000):
+    if(1==j%math.lcm(107+1,113+1)):
         print(j)
 
 
 
 print("----------------------")
-print("n= ", 29*41)
+print("n= ", 107*113)
