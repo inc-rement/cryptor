@@ -179,7 +179,10 @@ for i in arr:
 ##    if h > 2:
 ##        break
 
-x = bi("hello elliptic world!") 
+
+M=4+96
+print(chr(M))
+x = bi(chr(M-96)) 
 y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
 
 curve.g=(x,int(math.sqrt(y)))
@@ -198,7 +201,7 @@ print(dM)
 #print(curve.valid(curve.g))
 #print("-------------")
 
-print(ib(curve.g[0]))
+print(ib(dM[0]+96))
 
 
 
