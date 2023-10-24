@@ -179,7 +179,7 @@ for i in arr:
 ##    if h > 2:
 ##        break
 
-x = bi("hg") 
+x = bi("hello elliptic world!") 
 y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
 
 curve.g=(x,int(math.sqrt(y)))
