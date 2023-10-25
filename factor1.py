@@ -180,10 +180,9 @@ for i in arr:
 ##        break
 
 
-M=4+96
-print(chr(M))
-x = 8 
+x =ord("~")-96 
 y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+print(chr(x+96))
 
 curve.g=(x,int(math.sqrt(y)))
 print(curve.valid(curve.g))
