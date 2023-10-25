@@ -2,17 +2,16 @@
 
 from primePy import primes
 import math
-for i in range(128):
+for i in range(10000):
     if primes.check(i):
         if(2==i%3):
             print(i)
 
 print("----------------------")
-for j in range(10000):
-    if(1==j%math.lcm(107+1,113+1)):
+for j in range(100000000):
+    if(1==j%math.lcm(9743+1,9749+1)):
         print(j)
 
 
-
 print("----------------------")
-print("n= ", 107*113)
+print("n= ", 9743*9749)

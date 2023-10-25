@@ -86,8 +86,8 @@ curve=Curve()
 #print(curve.n/curve.p)
 #curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
 
-curve.p=113
-curve.n=12091
+curve.p=9743
+curve.n=94984507
 #print(curve.g)
 
 xP=0
@@ -165,42 +165,51 @@ for i in arr:
         t=t+1
 
 #print(t)
-##x=0
-##l=0
-##h=0
-##while True:
-##    x = curve.g[0]*30+l
-##    y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
-##    if math.sqrt(y)==int(math.sqrt(y)):
-##        print (l)
-##        h=h+1
+
+l=0
+h=0
+while True:
+    x = (126)*30+l
+    y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+    if math.sqrt(y)==int(math.sqrt(y)):
+        print (l)
+        h=h+1
         #break
-##    l=l+1
-##    if h > 2:
-##        break
+    l=l+1
+    if h > 2:
+        break
 
-
-x =ord("~")-96 
+x = 179 
 y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
-print(chr(x+96))
+#print("y=",y, "   x=",x)
+#print(curve.valid([x,math.sqrt(y)]))
+#print(x/30)
+
+
+
+
+#x =ord("~")#-96 
+#x=121
+#y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+#print(chr(x+96))
 
 curve.g=(x,int(math.sqrt(y)))
 print(curve.valid(curve.g))
 print(curve.g)
 
 
-eM=curve.mul(curve.g, 47)
-dM=curve.mul(eM, 131)
+eM=curve.mul(curve.g, 251)
+dM=curve.mul(eM, 189251)
     #crypt=crypt+str(eM[0])
     #decrypt=decrypt+str(dM[0])
 print(dM)
 #print(decrypt)
         #print(curve.valid(dM))
 #print("dec: ",chr(dM[0]+64))
-#print(curve.valid(curve.g))
+print(curve.valid(dM))
 #print("-------------")
 
-print(ib(dM[0]+96))
+#print(ib(dM[0]))
 
 
 
