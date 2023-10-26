@@ -21,26 +21,25 @@ l=0
 h=0
 x1=0
 y1=0
-#1 95
-#2 155
-#3 205
-#4 255
+#set X 1-30 for check(nem first and last must be the same)
+X=1
+print("x=", X)
 while True:
-    x = (((30*10)))*28+l
+    x = (((X*10)))*28+l
     y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
     if math.sqrt(y)==int(math.sqrt(y)):
-        print (l)
-        h=h+1
+        #print (l)
+        #h=h+1
         #curve.g=(x,int(math.sqrt(y)))
-        #break
-    l=l+1
-    if h > 10:
         break
+    l=l+1
+    #if h > 10:
+        #break
 
 print("y=",y, "   x=",x)
 
-x=(30*10)*28+13
-y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+#x=(X*10)*28+27
+#y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
 #print(chr(x+96))
 
 curve.g=(x,int(math.sqrt(y)))
@@ -54,7 +53,7 @@ print(dM)
 print(curve.valid(dM))
 #print("-------------")
 
-print(((dM[0]/(28*10))))
+print("decode=",math.floor((dM[0]/(28*10))))
 #print(chr(int(dM[0]/30.8)))
 
 
