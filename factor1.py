@@ -100,10 +100,10 @@ while True:
     xP=xP+1
     yP=math.sqrt((pow(xP, 3, curve.p) + curve.a*xP + curve.b) % curve.p)
     if yP==int(yP):
-        print("-------------")
+        #print("-------------")
         j=j+1
-        print(xP, yP)
-        print("on line:", curve.valid([xP, yP]))
+        #print(xP, yP)
+        #print("on line:", curve.valid([xP, yP]))
         curve.g=([xP,yP])
     #print("mess: ",chr(curve.g[0]+64))
         ##print(curve.g)
@@ -168,28 +168,31 @@ for i in arr:
 
 l=0
 h=0
+x1=0
+y1=0
 while True:
-    x = (126)*30+l
+    x = (((97)))*30+l
     y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
     if math.sqrt(y)==int(math.sqrt(y)):
         print (l)
         h=h+1
+        #curve.g=(x,int(math.sqrt(y)))
         #break
     l=l+1
     if h > 2:
         break
 
-x = 179 
-y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
-#print("y=",y, "   x=",x)
+#x = 179 
+#y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+print("y=",y, "   x=",x)
 #print(curve.valid([x,math.sqrt(y)]))
-#print(x/30)
+#print(chr(99))
 
 
 
 
-#x =ord("~")#-96 
-#x=121
+##x =ord((chr(179)))#-96 
+#x=97*30+151
 #y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
 #print(chr(x+96))
 
@@ -209,7 +212,7 @@ print(dM)
 print(curve.valid(dM))
 #print("-------------")
 
-#print(ib(dM[0]))
-
+print(((dM[0]/30.7)))
+#print(chr(int(dM[0]/30.8)))
 
 
