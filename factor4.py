@@ -21,47 +21,27 @@ curve.n=94984507
 class cryptor:
     def __init__(self):
         self.message=0    
+        l=0
+        h=0
+        X=int(sys.argv[1])
 
-
-
-
-l=0
-h=0
-x1=0
-y1=0
-#set X 1-30 for check(nem first and last must be the same)
-X=int(sys.argv[1])
-print("x=", X)
-while True:
-    x = (((X*10)))*28+l
-    y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
-    if math.sqrt(y)==int(math.sqrt(y)):
-        #print (l)
-        #h=h+1
-        #curve.g=(x,int(math.sqrt(y)))
-        break
-    l=l+1
-    #if h > 10:
-        #break
-
-print("y=",y, "   x=",x)
-
-#x=(X*10)*28+27
-#y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
-#print(chr(x+96))
-
-curve.g=(x,int(math.sqrt(y)))
-print(curve.valid(curve.g))
-print(curve.g)
-
-
-eM=curve.mul(curve.g, 251)
-dM=curve.mul(eM, 189251)
-print(dM)
-print(curve.valid(dM))
-#print("-------------")
-
-print("decode=",math.floor((dM[0]/(28*10))))
-#print(chr(int(dM[0]/30.8)))
+    def ele():        
+        while True:
+            x = (((X*10)))*28+l
+            y = (pow(x, 3, curve.p)+curve.a*x+curve.b) % curve.p
+            if math.sqrt(y)==int(math.sqrt(y)):
+                break
+            l=l+1
+    
+    def code():
+        print("y=",y, "   x=",x)
+        curve.g=(x,int(math.sqrt(y)))
+        print(curve.valid(curve.g))
+        print(curve.g)
+        eM=curve.mul(curve.g, 251)
+        dM=curve.mul(eM, 189251)
+        print(dM)
+        print(curve.valid(dM))
+        print("decode=",math.floor((dM[0]/(28*10))))
 
 
