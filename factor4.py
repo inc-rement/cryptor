@@ -30,7 +30,7 @@ h=0
 x1=0
 y1=0
 #set X 1-30 for check(nem first and last must be the same)
-X=1
+X=int(sys.argv[1])
 print("x=", X)
 while True:
     x = (((X*10)))*28+l
