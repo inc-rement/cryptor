@@ -8,6 +8,8 @@ import numpy as np
 from curve import bi, ib
 
 
+
+
 curve=Curve()
 #print(curve.n/curve.p)
 #curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
@@ -15,6 +17,12 @@ curve=Curve()
 curve.p=9743
 curve.n=94984507
 #print(curve.g)
+
+class cryptor:
+    def __init__(self):
+        self.message=0    
+
+
 
 
 l=0
