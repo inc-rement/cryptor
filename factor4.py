@@ -23,7 +23,10 @@ class Cryptor:
         self.message=0    
         self.l=0
         self.h=0
-        self.X=int(sys.argv[1])
+        #inputs = list(sys.stdin)  # Get all of stdin
+        #inputs = inputs[0]  # Get only the first line
+        #inputs = inputs.split()  #  p
+        self.X=0 #int(inputs[0])
         self.x=0
         self.y=0
 
@@ -47,5 +50,8 @@ class Cryptor:
         print("decode=",math.floor((dM[0]/(28*10))))
 
 cryptor=Cryptor()
-cryptor.ele()
-cryptor.code()
+inputs=list(sys.stdin)
+for i in inputs:
+    cryptor.X=int(i)
+    cryptor.ele()
+    cryptor.code()
