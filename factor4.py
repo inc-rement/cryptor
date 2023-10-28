@@ -24,13 +24,13 @@ class Cryptor:
         #inputs = list(sys.stdin)  # Get all of stdin
         #inputs = inputs[0]  # Get only the first line
         #inputs = inputs.split()  #  p
-        self.X=0 #int(inputs[0])
+        #self.X=0 #int(inputs[0])
         self.x=0
         self.y=0
 
     def ele(self):        
         while True:
-            self.x = (((self.X*10)))*28+self.l
+            self.x = (((self.message*10)))*28+self.l
             self.y = (pow(self.x, 3, curve.p)+curve.a*self.x+curve.b) % curve.p
             if math.sqrt(self.y)==int(math.sqrt(self.y)):
                 break
@@ -45,11 +45,11 @@ class Cryptor:
         dM=curve.mul(eM, 189251)
         #print(dM)
         #print(curve.valid(dM))
-        print("decode=",math.floor((dM[0]/(28*10))))
+        print("message: ",math.floor((dM[0]/(28*10))))
 
 cryptor=Cryptor()
 inputs=list(sys.stdin)
 for i in inputs:
-    cryptor.X=int(i)
+    cryptor.message=int(i)
     cryptor.ele()
     cryptor.code()
