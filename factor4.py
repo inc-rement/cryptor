@@ -37,14 +37,14 @@ class Cryptor:
             self.l=self.l+1
     
     def code(self):
-        print("y=", self.y, "   x=", self.x)
+        #print("y=", self.y, "   x=", self.x)
         curve.g=(self.x,int(math.sqrt(self.y)))
-        print(curve.valid(curve.g))
-        print(curve.g)
+        #print(curve.valid(curve.g))
+        #print(curve.g)
         eM=curve.mul(curve.g, 251)
         dM=curve.mul(eM, 189251)
-        print(dM)
-        print(curve.valid(dM))
+        #print(dM)
+        #print(curve.valid(dM))
         print("decode=",math.floor((dM[0]/(28*10))))
 
 cryptor=Cryptor()
