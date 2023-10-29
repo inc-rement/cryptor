@@ -17,6 +17,6 @@ for i in inputs:
         i2=int(i)
         g=False
         #print(i2, i1)
-        for j in range(2, 10000):
+        for j in range(2, 300):
             if(1==j%math.lcm(i1+1,i2+1)):
                 print(j)
