@@ -19,3 +19,10 @@ ed.py   <
 
 
 example /pq.py 9000 10000|./ed.py
+
+pq.py + ed.py  gives e*d==1
+
+pq.py+ed.py+factor.py  gives  open and secret key
+
+example ./pq.py 10 30|./ed.py |./factor.py
+
