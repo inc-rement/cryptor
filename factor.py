@@ -57,6 +57,7 @@ for n in inputs:
         i+=1
         if c>1:
             if is_prime(c):
+                print("---------------")
                 print(c)
                 n=int(int(n)/c)
                 if is_prime(int(n)):
