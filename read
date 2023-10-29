@@ -1,0 +1,11 @@
+ 
+  	___
+ 	|   input:  min max
+ 	|
+pq.py	<
+ 	|   output  p==q==2 (mod 3)
+	|___
+
+example  pq.py 9000 10000  gives numbers betwin 9000 10000
+
+==   -  similar
