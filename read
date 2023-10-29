@@ -3,9 +3,19 @@
  	|   input:  min max
  	|
 pq.py	<
- 	|   output  p==q==2 (mod 3)
+ 	|   output:  p==q==2 (mod 3)
 	|___
 
 example  pq.py 9000 10000  gives numbers betwin 9000 10000
 
 ==   -  similar
+
+	___
+	|    input: p,q
+	|  
+ed.py   <
+	|    output: ed==1 (mod lcm((p+1)(q+1)))
+	|___
+
+
+example /pq.py 9000 10000|./ed.py
