@@ -59,6 +59,7 @@ for n in inputs:
         if c>1:
             if is_prime(c):
                 print("---------------")
+                print("factor ", n)
                 print(c)
                 n=int(int(n)/c)
                 if is_prime(int(n)):
