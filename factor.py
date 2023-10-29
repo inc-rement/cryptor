@@ -44,6 +44,7 @@ def is_prime(n):
 
 
 
+
 P= [1 ,1]
 a= math.fmod(1, 10403)
 n=int(sys.argv[1])
