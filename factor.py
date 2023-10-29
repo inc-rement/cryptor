@@ -47,16 +47,19 @@ def is_prime(n):
 
 P= [1 ,1]
 a= math.fmod(1, 10403)
-n=int(sys.argv[1])
+#n=int(sys.argv[1])
+inputs=list(sys.stdin)
 i=2
-while True:
-    c=math.gcd(int((easy_mult(i , P ))[0]),n)
-    i+=1
-    if c>1:
-        if is_prime(c):
-            print(c)
-            n=int(n/c)
-            if is_prime(n):
-                print(n)
-                break
+j=0
+for n in inputs:
+    while True:
+        c=math.gcd(int((easy_mult(i , P ))[0]),int(n))
+        i+=1
+        if c>1:
+            if is_prime(c):
+                print(c)
+                n=int(int(n)/c)
+                if is_prime(int(n)):
+                    print(int(n))
+                    break
 
