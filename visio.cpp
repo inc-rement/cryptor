@@ -36,11 +36,11 @@ EllipticCurve ecc1(0,1/6,1/2,1/3);
 Point p;
 Point t;
 Point m1;
-mpf_class c,g;
-mpf_class y1;
-mpf_class x3, y3, x4, y4;
-mpf_class m=0;
-mpf_class x1;// = 1;
+mpz_class c,g;
+mpz_class y1;
+mpz_class x3, y3, x4, y4;
+mpz_class m=0;
+mpz_class x1;// = 1;
 bool f;
    while (1) {
      //      XClearWindow(d, w);
@@ -71,17 +71,17 @@ bool f;
 // double m=0;
 //if(x1<0)m=(pow(x1,2))-2;else if(x1>0)m=pow(x1,2)+2; else m=pow(x1,2);
 ///t.seta(t.getX());
-mpf_pow_ui(c.get_mpf_t(), t.getX().get_mpf_t(), 2);
-mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+mpz_pow_ui(c.get_mpz_t(), t.getX().get_mpz_t(), 2);
+mpz_sqrt(g.get_mpz_t(),c.get_mpz_t());
 
 m=t.getX()-5+2;
 //m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
 
-mpf_pow_ui(c.get_mpf_t(), t.getX().get_mpf_t(), 3);
+mpz_pow_ui(c.get_mpz_t(), t.getX().get_mpz_t(), 3);
 c=c+ecc.getB()*t.getX();
 
-mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+mpz_sqrt(g.get_mpz_t(),c.get_mpz_t());
 
 
 t.setY(g);
@@ -96,7 +96,7 @@ t.setY(g);
 //if((m*(x-x1)+y1)>0)XDrawPoint(d, w, DefaultGC(d, s), (x*10)+500, 500-(m*(x-x1)+y1)*10);
 //if((m*(x-x1)+y1)<0)XDrawPoint(d, w, DefaultGC(d, s), 500-abs(x*10), 500+(m*(abs(x)-x1)+y1)*10);
 
-mpf_class X, Y;
+mpz_class X, Y;
 X=((x*10)+500);
 Y=500-(m*(x-t.getX())+t.getY())*10;
 
@@ -106,7 +106,7 @@ Line tangent(1,1);
 
 XDrawArc(d, w, DefaultGC(d, s), t.getX().get_d()*10+497, 497-t.getY().get_d()*10, 5, 5, 0, 360 * 64);
 
-mpf_pow_ui(c.get_mpf_t(), m.get_mpf_t(), 2);
+mpz_pow_ui(c.get_mpz_t(), m.get_mpz_t(), 2);
 c=c-2*t.getX();
 x3=c;
 
@@ -149,7 +149,7 @@ std::cout<<"---------"<<std::endl;
 m=p.getX()-5+2;
 //m=sqrt(pow(t.getX(),2))-5+3;
 m=m*m;
-mpf_pow_ui(c.get_mpf_t(), m.get_mpf_t(), 2);
+mpz_pow_ui(c.get_mpz_t(), m.get_mpz_t(), 2);
 
 c=c-2*p.getX();
 x4=c;
@@ -169,10 +169,10 @@ p.setY(y4);
 
 std::cout<<p.getY()<<std::endl;
 
-mpf_pow_ui(c.get_mpf_t(), p.getX().get_mpf_t(), 3);
+mpz_pow_ui(c.get_mpz_t(), p.getX().get_mpz_t(), 3);
 c=c+ecc.getB()*p.getX();
 
-mpf_sqrt(g.get_mpf_t(),c.get_mpf_t());
+mpz_sqrt(g.get_mpz_t(),c.get_mpz_t());
 
 
 

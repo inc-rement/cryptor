@@ -5,22 +5,22 @@ class Point
 private:
     
     bool identity;
-    mpf_class x,y;
+    mpz_class x,y;
 public:
     Point() : identity(true) {}
     Point(bool b);
     Point(int x, int y);
-    mpf_class getX() const{
+    mpz_class getX() const{
         return this->x;
     };
-    void setX(mpf_class _x){
+    void setX(mpz_class _x){
         this->x = _x;
     }
-    mpf_class getY() const{
+    mpz_class getY() const{
         return this->y;
     };
 
-    void setY(mpf_class _y) {
+    void setY(mpz_class _y) {
         this->y = _y;
     };
 

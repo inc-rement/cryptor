@@ -18,7 +18,7 @@ def g_l_l ( P, Q, a ):
             return [0 ,0,P [1]]
         m = (int(P[0])**2+2+a )/2/P[1]
     else :
-        if int(Q[0] -P[0])!=Q[0]-P[0]:
+        if int(Q[0] -P[0])!=True:
             return [0 ,0,Q[0] -P[0]]
         m = (Q[1] -P[1])/(Q[0] -P[0])
     x3 = m**2-int(P[0]) -int(Q[0])
@@ -34,7 +34,7 @@ def mult_2_l (n,P,a):
         pow_2P = g_l_l ( pow_2P , pow_2P , a )
     return result
 
-#print(g_l_l ([9696 , 506 ,1] ,[7878 , 10200 ,1] ,1))
+print(g_l_l ([9696 , 506 ,1] ,[7878 , 10200 ,1] ,1))
 
 
 def is_prime(n):
@@ -70,7 +70,7 @@ def lenstra (n, bound_a , bound_b ):
     print('Increase the values of bound_a and bound_b')
 
 print(lenstra (25 ,200 ,100))
-print(lenstra ( (10^8+7) ,200 ,100))
-print (lenstra ( 10^20+699 ,200 ,100))
-print (lenstra ( 10^30+427 ,300 ,1000))
+#print(lenstra ( (10^8+7) ,200 ,100))
+#print (lenstra ( 10^20+699 ,200 ,100))
+#print (lenstra ( 10^30+427 ,300 ,1000))
 
