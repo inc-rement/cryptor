@@ -15,16 +15,17 @@ e=251
 d=189251
 
 class Cryptor:
-    def __init__(self):
-        self.message=0    
-        self.l=0
-        self.h=0
-        self.x=0
-        self.y=0
+    __message=0    
+    l=0
+    h=0
+    x=0
+    y=0
+
+    #def __init__(self):
 
     def ele(self):        
         while True:
-            self.x = (((self.message*30)))*28+self.l
+            self.x = (((self.__message*30)))*28+self.l
             self.y = (pow(self.x, 3, curve.p)+curve.a*self.x+curve.b) % curve.p
             if math.sqrt(self.y)==int(math.sqrt(self.y)):
                 break
@@ -45,7 +46,7 @@ cryptor=Cryptor()
 inputs=list(sys.stdin)
 for i in inputs:
     start = time.time()
-    cryptor.message=int(i)
+    cryptor.__message=int(i)
     cryptor.ele()
     cryptor.code()
     end = time.time()
