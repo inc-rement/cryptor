@@ -22,6 +22,8 @@ class Cryptor:
     y=0
 
     #def __init__(self):
+    def mess(self, message_):
+        self.__message=message_
 
     def ele(self):        
         while True:
@@ -46,7 +48,7 @@ cryptor=Cryptor()
 inputs=list(sys.stdin)
 for i in inputs:
     start = time.time()
-    cryptor.__message=int(i)
+    cryptor.mess(int(i))
     cryptor.ele()
     cryptor.code()
     end = time.time()
