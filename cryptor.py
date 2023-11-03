@@ -24,7 +24,7 @@ class Cryptor:
 
     def ele(self):        
         while True:
-            self.x = (((self.message*20)))*28+self.l
+            self.x = (((self.message*30)))*28+self.l
             self.y = (pow(self.x, 3, curve.p)+curve.a*self.x+curve.b) % curve.p
             if math.sqrt(self.y)==int(math.sqrt(self.y)):
                 break
@@ -39,11 +39,14 @@ class Cryptor:
         dM=curve.mul(eM, d)
         #print(dM)
         #print(curve.valid(dM))
-        print("message: ",math.floor((dM[0]/(28*20))))
+        print("message: ",math.floor((dM[0]/(28*30))))
 
 cryptor=Cryptor()
 inputs=list(sys.stdin)
 for i in inputs:
+    start = time.time()
     cryptor.message=int(i)
     cryptor.ele()
     cryptor.code()
+    end = time.time()
+    print(end - start)
