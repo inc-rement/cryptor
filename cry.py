@@ -9,15 +9,10 @@ from curve import bi, ib
 
 curve=Curve()
 
-p= 20963
-q= 20981
-n= 439824703
-
-curve.p=p
-curve.n=n
-
-e=5 *17 *19 
-d=363151 
+curve.p=9743
+curve.n=94984507
+e=251
+d=189251
 
 class Cryptor:
     __message=0    
