@@ -53,13 +53,14 @@ inputs=list(sys.stdin)
 i=2
 j=0
 for n in inputs:
+    print("---------------")
     while True:
         c=math.gcd(int((easy_mult(i , P ))[0]),int(n))
         i+=1
         if c>1:
             if is_prime(c):
-                print("---------------")
-                print("factor ", n)
+                #print("---------------")
+                #print("factor ", n)
                 print(c)
                 n=int(int(n)/c)
                 if is_prime(int(n)):

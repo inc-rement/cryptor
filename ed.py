@@ -10,6 +10,7 @@ i2=0
 for i in inputs:
     #print(i1,i2)
     if g == False:
+        #print("---------------")
         i1=int(i)
         g=True
         continue
@@ -20,3 +21,4 @@ for i in inputs:
         for j in range(2, 1000000000):
             if(1==j%math.lcm(i1+1,i2+1)):
                 print(j)
+        print("---------------")
