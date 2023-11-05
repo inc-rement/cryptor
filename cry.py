@@ -8,11 +8,15 @@ import numpy as np
 from curve import bi, ib
 
 curve=Curve()
+p= 49871
+q= 49877
+n= 2487415867
+curve.p=p
+curve.n=n
 
-curve.p=9743
-curve.n=94984507
-e=251
-d=189251
+e=23 *173
+d=208387 
+
 
 class Cryptor:
     __message=0    

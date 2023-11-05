@@ -2,14 +2,14 @@
 
 from primePy import primes
 import math
-p= 20963
-q= 20981
+p= 49853
+q= 49871
 
 n=p*q
 ed=1
 
 
-for i in range(20000, 21000):
+for i in range(49000, 49877):
     if primes.check(i):
         if(2==i%3):
             print("p or q=", i)
