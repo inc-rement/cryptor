@@ -48,13 +48,18 @@ def is_prime(n):
 
 P= [1 ,1]
 a= math.fmod(1, 10403)
-#n=int(sys.argv[1])
+#n=(sys.argv[1])
 inputs=list(sys.stdin)
 i=2
 j=0
+c=0
 for n in inputs:
+    #if n == '---------------\n':
+    #    break
     print("---------------")
     while True:
+        if n == '---------------\n':
+            break
         c=math.gcd(int((easy_mult(i , P ))[0]),int(n))
         i+=1
         if c>1:

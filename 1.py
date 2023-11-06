@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 
 #strA = sys.argv[1].replace('[', ' ').replace(']', ' ').replace(',', ' ').split()
@@ -6,6 +7,15 @@ import sys
 #print(A)
 #B = [int(i) for i in strB]
 #print(B)
+
+
+inputs=list(sys.stdin)
+for g in inputs:
+#    if n =="---------------":
+#        print(n)
+    if g == '1\n':
+        print(g)
+
 
 
 
