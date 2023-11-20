@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import pdb
 import math
 import time
 import sys 
@@ -43,18 +44,12 @@ def is_prime(n):
             return False
     return True
 
-
-
-
-
-P= [1 ,1]
-a= math.fmod(1, 10403)
-#n=(sys.argv[1])
-inputs=list(sys.stdin)
-i=2
-j=0
-c=0
-for n in inputs:
+ 
+ 
+def addition(n):
+    i=2
+    j=0
+    c=0
     #if n == '---------------\n':
     #    break
     print("---------------")
@@ -64,12 +59,32 @@ for n in inputs:
         c=math.gcd(int((easy_mult(i , P ))[0]),int(n))
         i+=1
         if c>1:
-            #if is_prime(c):
+        #if is_prime(c):
                 #print("---------------")
                 #print("factor ", n)
-                print(c)
-                n=int(int(n)/c)
-                if is_prime(int(n)):
-                    print(int(n))
-                    break
+            print(c)
+            n=int(int(n)/c)
+            if is_prime(int(n)):
+                print(int(n))
+                break
+        #if c==1:
+        #    break
 
+
+
+
+
+
+
+
+
+
+
+ 
+#pdb.set_trace()
+
+
+P= [1 ,1]
+a= math.fmod(1, 10403)
+#n=(sys.argv[1])
+addition(402309181)

@@ -9,7 +9,7 @@ from curve import bi, ib
 
 def g_l (P, Q):
     #print(P, Q)
-    #pdb.set_trace()
+    pdb.set_trace()
     if P == 0:
         return Q
     if Q == 0:
@@ -165,6 +165,7 @@ for i in arr:
         t=t+1
 
 #print(t)
+    pdb.set_trace()
 
 l=0
 h=0

@@ -8,15 +8,6 @@ import numpy as np
 from curve import bi, ib
 
 curve=Curve()
-p= 49871
-q= 49877
-n= 2487415867
-curve.p=p
-curve.n=n
-
-e=23 *173
-d=208387 
-
 
 class Cryptor:
     __message=0    
@@ -46,14 +37,28 @@ class Cryptor:
         dM=curve.mul(eM, d)
         #print(dM)
         #print(curve.valid(dM))
-        print("message: ",math.floor((dM[0]/(28*30))))
+        print(math.floor((dM[0]/(28*30))))
 
 cryptor=Cryptor()
 inputs=list(sys.stdin)
 for i in inputs:
-    start = time.time()
-    cryptor.mess(int(i))
+    inputs[0]=inputs[0].replace("[","")
+    inputs[0]=inputs[0].replace("]","")
+    inputs[0]=inputs[0].replace("\n","")
+    inputs[0]=inputs[0].replace(", ","*")
+    print(len(inputs[0])) 
+    print(inputs[0].rfind("*"))
+    p=int(inputs[0])
+    q= int(1) 
+    n= int(p)*int(q)
+    curve.p=p
+    curve.n=n
+    print(curve.n)
+    e=23 *173
+    d=208387 
+    #start = time.time()
+    cryptor.mess(int(1))
     cryptor.ele()
     cryptor.code()
-    end = time.time()
-    print(end - start)
+    #end = time.time()
+    #print(end - start)
