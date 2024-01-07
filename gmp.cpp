@@ -7,8 +7,16 @@
 class Point{
         public:
 	Point(std::string x_, std::string y_):x(x_), y(y_){}
-        std::string x;
+        Point(){}
+	std::string x;
         std::string y;
+
+        bool operator == (Point a){
+        if(this->x==a.x)if(this->y==a.y)return true;
+        return false;
+        }
+
+
 
 };
 
@@ -26,13 +34,8 @@ class Curve{
         //g = [gx,gy]
 	std::string n = "115792089210356248762697446949407573529996955224135760342422259061068512044369";
 
-bool valid(Point point){
-//        mpz_class xP = point.x
-//        if xP == NULL:
-//            return false;
-//        mpz_class yP=point.y;
-//        return yP^2 % p == (pow(xP, 3, p)+a*xP+b) % p;
 
+bool valid(Point point){
 
 mpz_class xP(point.x);
 mpz_class yP(point.y);
@@ -42,7 +45,73 @@ return ((yP*yP) % mpz_class(p))==((((xP*xP*xP)% mpz_class(p))+(mpz_class(p)-3)*x
 
 }
 
+Point add(Point P,Point Q){
+	//P+P=2P
+        if(P==Q)return P;//self.dbl(P)
+        //P+0=P
 
+        if (P.x=="")
+            return Q;
+        if (Q.x=="")
+            return P;
+/*        xP=P[0]
+        yP=P[1]
+        xQ=Q[0]
+        yQ=Q[1]
+        s=(yP-yQ)*gmpy2.invert(xP-xQ, self.p) % self.p
+        xR=(pow(s,2,self.p)-xP-xQ) % self.p
+        yR=(-yP+s*(xP-xR)) % self.p
+        R=[xR,yR]
+*/
+        return Q;//R;
+
+}
+/*
+    def dbl(self,P):
+        # 2*0=0
+        if P[0]==0:
+            return P
+        
+        # yP==0
+        if P[1]==0:
+            return [None, None]
+
+        xP=P[0]
+        yP=P[1]
+        s=(3*pow(xP,2 ,self.p)+self.a)* gmpy2.invert(2*yP, self.p) % self.p
+        xR=(pow(s,2,self.p)-2*xP)%self.p
+        yR=(-yP+s*(xP-xR))%self.p
+        R=[xR,yR]
+        return R
+
+    def mul(self, P, k):
+        # x0=0
+        if P[0]==None:
+            return P
+
+        N=P
+        R=[None, None]
+        
+        while k:
+            bit=k%2
+            k>>=1
+            if bit:
+                R=self.add(R,N)
+            N=self.dbl(N)
+
+        return R
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 };
@@ -64,10 +133,18 @@ Curve curve;
 //mpz_class p3(curve.p3);
 //mpz_class p4(curve.p4);
 //mpz_class p5(curve.p5);
-Point point("48439561293906451759052585252797914202762949526041747995844080717082404635286", "36134250956749795798585127919587881956611106672985015071877198253568414405109");
+
+Point A("1","1"), B("2","2");
+
+Point n(curve.add(A,B));
+
+std::cout<<n.x<<std::endl;
 
 
-if(curve.valid(point))std::cout<<"true"<<std::endl;
+//Point point("48439561293906451759052585252797914202762949526041747995844080717082404635286", "36134250956749795798585127919587881956611106672985015071877198253568414405109");
+
+
+//if(curve.valid(point))std::cout<<"true"<<std::endl;
 
    return EXIT_SUCCESS;
 }
