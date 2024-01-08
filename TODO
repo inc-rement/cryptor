@@ -1,4 +1,11 @@
+mpz to classs member
+
+
 https://crypto.stackexchange.com/questions/76340/how-to-create-an-ec-point-from-a-plaintext-message-for-encryption
+
+point send  (x,y) message
+
+
 
 V make factor.py for cat
 cat << end | ./factor4.py
