@@ -54,15 +54,15 @@ Point add(Point P,Point Q){
             return Q;
         if (Q.x=="")
             return P;
-/*        xP=P[0]
-        yP=P[1]
-        xQ=Q[0]
-        yQ=Q[1]
-        s=(yP-yQ)*gmpy2.invert(xP-xQ, self.p) % self.p
-        xR=(pow(s,2,self.p)-xP-xQ) % self.p
-        yR=(-yP+s*(xP-xR)) % self.p
-        R=[xR,yR]
-*/
+        mpz_class xP(P.x);
+        mpz_class yP(P.y);
+        mpz_class xQ(Q.x);
+        mpz_class yQ(Q.y);
+        mpz_class s=(yP-yQ)*(1/(xP-xQ) % mpz_class(p)) % mpz_class(p);
+        //xR=(pow(s,2,self.p)-xP-xQ) % self.p
+        //yR=(-yP+s*(xP-xR)) % self.p
+        //R=[xR,yR]
+
         return Q;//R;
 
 }
