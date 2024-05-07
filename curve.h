@@ -1,3 +1,6 @@
+#include <string>
+
+/*
 import gmpy2
 
 def bi(s):
@@ -14,21 +17,30 @@ def ib(i,l=32):
         i>>=8
         l-=1
     return s
+*/
+class Point{
+	public:
+	std::string x;
+	std::string y;
+
+};
+
+
+
 
 # curve implementation in python
-class Curve:
-    
-    def __init__(self):
+class Curvei{
+    public:
         # curve parameters for NIST P-256 (ANSI prime256v1, SECG secp256r1)
         # https://www.nsa.gov/ia/_files/nist-routines.pdf
         # http://perso.univ-renes1.fr/sylvain.duquesne/master/standards/sec2_final.pdf
-        self.p = 2**256-2**224+2**192+2**96-1
-        self.a = self.p-3
-        self.b = 41058363725152142129326129780047268409114441015993725554835256314039467401291
+        int p = 2**256-2**224+2**192+2**96-1
+        int a = self.p-3
+        int b = 41058363725152142129326129780047268409114441015993725554835256314039467401291
         gx = bi("6b17d1f2 e12c4247 f8bce6e5 63a440f2 77037d81 2deb33a0 f4a13945 d898c296".replace(" ", "").encode().hex())
         gy = bi("4fe342e2 fe1a7f9b 8ee7eb4a 7c0f9e16 2bce3357 6b315ece cbb64068 37bf51f5".replace(" ", "").encode().hex())
-        self.g = [gx,gy]
-        self.n = 115792089210356248762697446949407573529996955224135760342422259061068512044369
+        g = [gx,gy]
+        int n = 115792089210356248762697446949407573529996955224135760342422259061068512044369
 
     def valid(self, point):
         xP = point[0]
@@ -90,7 +102,7 @@ class Curve:
 
         return R
 
-
+}
 #curve=Curve()
 
 #curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])

@@ -127,14 +127,20 @@ Curve curve;
 //mpz_class j(curve.n);
 //gmp_printf("%Zd",curve.p);
 //mpz_class i(curve.n);
-//mpz_t x;
+mpz_t x;  
+mpz_init(x);
+mpz_init_set_str(x,"48439561293906451759052585252797914202762949526041747995844080717082404635286",10);
+//gmp_printf("%Zd\n",x);
+
+
+
 //mpz_class p(curve.p);
 //mpz_class p2(curve.p2);
 //mpz_class p3(curve.p3);
 //mpz_class p4(curve.p4);
 //mpz_class p5(curve.p5);
 
-Point A("1","1"), B("2","2");
+Point A("48439561293906451759052585252797914202762949526041747995","1"), B("48439561292797914202762949526041747995844080717082404635286","2");
 
 Point n(curve.add(A,B));
 

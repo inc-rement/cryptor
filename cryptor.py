@@ -19,6 +19,17 @@ curve.n=n
 e=5 *17 *19 
 d=363151 
 
+class Tree:
+    def __init__(self):
+        self.left=None
+        self.right=None
+        self.data=None
+
+root=Tree()
+root.data="data"
+root.left=Tree()
+root.rigth=Tree()
+
 class Cryptor:
     __message=0    
     l=0
