@@ -1,4 +1,4 @@
-import gmpy2
+from sympy import mod_inverse
 
 def bi(s):
     i=0
@@ -50,7 +50,7 @@ class Curve:
         yP=P[1]
         xQ=Q[0]
         yQ=Q[1]
-        s=(yP-yQ)*gmpy2.invert(xP-xQ, self.p) % self.p
+        s=(yP-yQ)*mod_inverse(xP-xQ, self.p) % self.p
         xR=(pow(s,2,self.p)-xP-xQ) % self.p
         yR=(-yP+s*(xP-xR)) % self.p
         R=[xR,yR]
@@ -58,7 +58,7 @@ class Curve:
 
     def dbl(self,P):
         # 2*0=0
-        if P[0]==0:
+        if P[0]==None:
             return P
         
         # yP==0
@@ -67,7 +67,7 @@ class Curve:
 
         xP=P[0]
         yP=P[1]
-        s=(3*pow(xP,2 ,self.p)+self.a)* gmpy2.invert(2*yP, self.p) % self.p
+        s=(3*pow(xP, 2 ,self.p)+self.a)*mod_inverse(2*yP, self.p) % self.p
         xR=(pow(s,2,self.p)-2*xP)%self.p
         yR=(-yP+s*(xP-xR))%self.p
         R=[xR,yR]
@@ -75,7 +75,7 @@ class Curve:
 
     def mul(self, P, k):
         # x0=0
-        if P[0]==None:
+        if P[0]==0:
             return P
 
         N=P

@@ -1,1 +1,1 @@
-echo 'digraph { BigNum Point Curve}' | dot -Tx11
+echo 'digraph { pq}' | dot -Tx11
