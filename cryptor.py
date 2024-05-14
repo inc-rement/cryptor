@@ -52,8 +52,9 @@ class Cryptor:
         dM=curve.mul(eM, d)
         print(dM)
         print(curve.valid(dM))
-        print("message: ",(math.floor(dM[0]/15)))
-        print(d,e)
+        #print("message: ",(math.floor(dM[0]/15)))
+        #print(d,e)
+        assert(math.floor(dM[0]/15)==self._Cryptor__message)
 
 cryptor=Cryptor()
 for t in range(int(0), int(10000)):
@@ -77,7 +78,7 @@ for i in range(int(1), int(100)):
                     cryptor.mess(int(3))
                     cryptor.ele()
                     cryptor.code()
-
+                    assert(True)
 
 class Tree:
     def __init__(self):
