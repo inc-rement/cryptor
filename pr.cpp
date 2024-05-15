@@ -3,8 +3,13 @@
 #include <cmath>
 #include <numeric>
 #include <cassert>
+#include "curve.h"
 using namespace std;
 int main() {
+    Curve *curve=new Curve();
+    
+    //mpz_class g(2+3);
+    //cout<<g<<endl;
     mpz_t n, s;
     mpz_init(n);
     mpz_init(s);
@@ -21,7 +26,7 @@ int main() {
 	//cout<<mpz_get_ui(s)<<endl;
 
 	
-if(((mpz_get_ui(n)%3)==2%3)){cout<<(mpz_get_ui(n)%3)<<endl;cout<<(mpz_get_ui(n))<<endl;}
+//if(((mpz_get_ui(n)%3)==2%3)){cout<<(mpz_get_ui(n)%3)<<endl;cout<<(mpz_get_ui(n))<<endl;}
 
 }
 //}

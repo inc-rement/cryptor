@@ -1,5 +1,7 @@
 #include <string>
-
+#include <gmp.h>
+#include <gmpxx.h>
+using namespace std;
 /*
 import gmpy2
 
@@ -17,7 +19,7 @@ def ib(i,l=32):
         i>>=8
         l-=1
     return s
-*/
+
 class Point{
 	public:
 	std::string x;
@@ -25,23 +27,39 @@ class Point{
 
 };
 
+*/
 
 
-
-# curve implementation in python
-class Curvei{
+//# curve implementation in python
+class Curve{
     public:
-        # curve parameters for NIST P-256 (ANSI prime256v1, SECG secp256r1)
-        # https://www.nsa.gov/ia/_files/nist-routines.pdf
-        # http://perso.univ-renes1.fr/sylvain.duquesne/master/standards/sec2_final.pdf
-        int p = 2**256-2**224+2**192+2**96-1
-        int a = self.p-3
-        int b = 41058363725152142129326129780047268409114441015993725554835256314039467401291
-        gx = bi("6b17d1f2 e12c4247 f8bce6e5 63a440f2 77037d81 2deb33a0 f4a13945 d898c296".replace(" ", "").encode().hex())
-        gy = bi("4fe342e2 fe1a7f9b 8ee7eb4a 7c0f9e16 2bce3357 6b315ece cbb64068 37bf51f5".replace(" ", "").encode().hex())
-        g = [gx,gy]
-        int n = 115792089210356248762697446949407573529996955224135760342422259061068512044369
+        //# curve parameters for NIST P-256 (ANSI prime256v1, SECG secp256r1)
+        //# https://www.nsa.gov/ia/_files/nist-routines.pdf
+        //# http://perso.univ-renes1.fr/sylvain.duquesne/master/standards/sec2_final.pdf
+        
+	mpz_t n,b;// a, b, gx, gy, n;
 
+	Curve(){
+        //mpz_init(p);
+        //mpz_init(a);
+        mpz_init(b);
+        //mpz_init(gx);
+        //mpz_init(gy);
+        mpz_init(n);
+	mpz_class c(3);
+
+	mpz_class p(pow(2,256)-pow(2,224)+pow(2,192)+pow(2,96)-1);
+        mpz_class a(p-3);
+	mpz_set_str(b, "41058363725152142129326129780047268409114441015993725554835256314039467401291", 10);
+	//mpz_out_str(stdout, 10, b);
+        //mpz_set_ui(n, 2);gx = bi("6b17d1f2 e12c4247 f8bce6e5 63a440f2 77037d81 2deb33a0 f4a13945 d898c296".replace(" ", "").encode().hex())
+        //mpz_set_ui(n, 2);gy = bi("4fe342e2 fe1a7f9b 8ee7eb4a 7c0f9e16 2bce3357 6b315ece cbb64068 37bf51f5".replace(" ", "").encode().hex())
+        //g = [gx,gy]
+        mpz_class n("115792089210356248762697446949407573529996955224135760342422259061068512044369");
+	//mpz_out_str(stdout, 10, n);
+	cout<<n-p<<endl;
+	}
+/*
     def valid(self, point):
         xP = point[0]
         if xP == None:
@@ -102,7 +120,7 @@ class Curvei{
 
         return R
 
-}
-#curve=Curve()
-
-#curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
+}*/
+};
+//#curve=Curve()
+//#curve.g=([48439561293906451759052585252797914202762949526041747995844080717082404635286, 36134250956749795798585127919587881956611106672985015071877198253568414405109])
