@@ -7,7 +7,8 @@
 using namespace std;
 int main() {
     Curve *curve=new Curve();
-    
+    curve->g=(new Point("48439561293906451759052585252797914202762949526041747995844080717082404635286", "36134250956749795798585127919587881956611106672985015071877198253568414405109"));
+     cout<<curve->valid(curve->g)<<endl;
     //mpz_class g(2+3);
     //cout<<g<<endl;
     mpz_t n, s;
